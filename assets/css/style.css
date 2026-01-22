@@ -746,6 +746,15 @@ ul, ol {
     transition: fill var(--transition-fast);
 }
 
+.mobile-menu__regions {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--bg);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
 /* Mobile Menu Overlay */
 body.menu-open {
     overflow: hidden !important;
@@ -1268,6 +1277,8 @@ body.menu-open::before {
     overflow: hidden;
     box-shadow: var(--shadow-lg);
     transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    display: flex;
+    flex-direction: column;
 }
 
 .house-card:hover {
@@ -1318,6 +1329,9 @@ body.menu-open::before {
 
 .house-card__body {
     padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .house-card__title {
@@ -1355,6 +1369,8 @@ body.menu-open::before {
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-bottom: 1rem;
+    flex-grow: 1;
+    align-content: flex-start;
 }
 
 .house-card__features li {
@@ -1368,6 +1384,7 @@ body.menu-open::before {
 .house-card__actions {
     display: flex;
     gap: 0.5rem;
+    margin-top: auto;
 }
 
 .house-card__actions .btn {
@@ -2273,6 +2290,41 @@ body.menu-open::before {
     fill: var(--white);
 }
 
+/* Contact Manager */
+.contacts__manager {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+}
+
+.contacts__manager-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.contacts__manager-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    color: var(--white);
+}
+
+.contacts__manager-info strong {
+    font-size: 1.1rem;
+}
+
+.contacts__manager-info span {
+    font-size: 0.875rem;
+    opacity: 0.85;
+}
+
 /* Contact Form */
 .contact-form {
     background: var(--card);
@@ -2391,6 +2443,19 @@ body.menu-open::before {
     margin-top: 0.5rem;
 }
 
+.footer__regions {
+    font-size: 0.75rem;
+    opacity: 0.5;
+    margin-top: 0.5rem;
+}
+
+.footer__logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+}
+
 .footer__nav {
     display: flex;
     flex-wrap: wrap;
@@ -2401,6 +2466,7 @@ body.menu-open::before {
 @media (min-width: 768px) {
     .footer__nav {
         justify-content: flex-start;
+        align-self: center;
     }
 }
 

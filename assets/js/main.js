@@ -857,6 +857,12 @@ ${data.package ? `<b>Комплектация:</b> ${escapeHtml(data.package)}` 
     // ═══════════════════════════════════════════════════════════════
 
     function init() {
+        // Scroll to top on page load (prevent browser scroll restoration)
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+
         initMobileMenu();
         initSmoothScroll();
         initModals();
