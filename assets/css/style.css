@@ -2118,6 +2118,10 @@ body.menu-open::before {
     display: flex;
     gap: 1.5rem;
     transition: transform var(--transition-slow);
+    touch-action: pan-y;
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: grab;
 }
 
 .review-card {

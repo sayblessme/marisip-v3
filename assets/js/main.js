@@ -548,9 +548,6 @@ ${data.package ? `<b>Комплектация:</b> ${escapeHtml(data.package)}` 
             }
 
             updateProgress();
-
-            // Scroll to quiz
-            scrollToElement('#quiz');
         }
 
         function showSuccess() {
