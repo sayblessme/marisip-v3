@@ -2182,6 +2182,7 @@ body.menu-open::before {
     display: flex;
     justify-content: center;
     gap: 1rem;
+    margin-top: 1.5rem;
 }
 
 .reviews__arrow {
