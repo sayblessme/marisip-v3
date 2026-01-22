@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="МариСип — строительство SIP-домов под ключ от 1,35 млн рублей. Строим тёплые, энергоэффективные дома за 30-60 дней в Марий Эл, Татарстане, Чувашии и Краснодарском крае.">
+    <meta name="keywords" content="SIP дома, строительство домов, дома под ключ, Марий Эл, Йошкар-Ола, энергоэффективные дома, СИП панели">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="МариСип — SIP-дома под ключ от 1,35 млн ₽">
+    <meta property="og:description" content="Строим тёплые, энергоэффективные дома за 30-60 дней по типовым и индивидуальным проектам">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+
+    <title>МариСип — SIP-дома под ключ от 1,35 млн ₽</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/img/logo.webp" type="image/webp">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- ═══════════════════════════════════════════════════════════════
+                              TOP BAR
+    ═══════════════════════════════════════════════════════════════ -->
+    <div class="top-bar">
+        <div class="top-bar__inner">
+            <span class="top-bar__slogan">ДОМА из СИП-ПАНЕЛЕЙ ПОД КЛЮЧ</span>
+            <div class="top-bar__regions">
+                <span>Марий Эл</span>
+                <span>Татарстан</span>
+                <span>Чувашия</span>
+                <span>Краснодарский край</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+                                 HEADER
+    ═══════════════════════════════════════════════════════════════ -->
+    <header class="header" id="header">
+        <div class="header__inner">
+            <a href="#" class="logo">
+                <div class="logo__icon">
+                    <svg viewBox="0 0 40 40" fill="none">
+                        <path d="M20 4L4 18h5v18h22V18h5L20 4z" fill="#fff"/>
+                        <rect x="16" y="24" width="8" height="12" fill="#2e7d32"/>
+                    </svg>
+                </div>
+                <div class="logo__text">
+                    <span class="logo__name">МариСип</span>
+                    <span class="logo__tagline">SIP-дома под ключ</span>
+                </div>
+            </a>
+
+            <nav class="nav" id="nav">
+                <ul class="nav__list">
+                    <li><a href="#catalog" class="nav__link">Каталог</a></li>
+                    <li><a href="#packages" class="nav__link">Комплектации</a></li>
+                    <li><a href="#mortgage" class="nav__link">Ипотека</a></li>
+                    <li><a href="#process" class="nav__link">Как работаем</a></li>
+                    <li><a href="#reviews" class="nav__link">Отзывы</a></li>
+                    <li><a href="#contacts" class="nav__link">Контакты</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__contacts">
+                <a href="tel:+79996092666" class="header__phone">
+                    <svg class="header__phone-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    </svg>
+                    <span>8 (999) 609-26-66</span>
+                </a>
+                <button class="btn btn--green btn--sm header__cta" data-modal="consult">
+                    Консультация
+                </button>
+            </div>
+
+            <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu__header">
+            <a href="tel:+79996092666" class="mobile-menu__phone">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
+                8 (999) 609-26-66
+            </a>
+        </div>
+        <nav class="mobile-menu__nav">
+            <a href="#catalog" class="mobile-menu__link">Каталог домов</a>
+            <a href="#packages" class="mobile-menu__link">Комплектации</a>
+            <a href="#mortgage" class="mobile-menu__link">Ипотека</a>
+            <a href="#process" class="mobile-menu__link">Как работаем</a>
+            <a href="#reviews" class="mobile-menu__link">Отзывы</a>
+            <a href="#about" class="mobile-menu__link">О компании</a>
+            <a href="#contacts" class="mobile-menu__link">Контакты</a>
+        </nav>
+        <div class="mobile-menu__socials">
+            <a href="https://wa.me/79996092666" class="mobile-menu__social" aria-label="WhatsApp">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+            <a href="https://t.me/+79996092666" class="mobile-menu__social" aria-label="Telegram">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+                              HERO SECTION
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="hero">
+        <!-- Desktop background -->
+        <div class="hero__bg hero__bg--desktop">
+            <img src="assets/img/hero-bg.jpg" alt="" loading="eager">
+        </div>
+        <div class="hero__overlay"></div>
+
+        <!-- MOBILE: Top orange banner -->
+        <div class="hero__top">
+            <div class="hero__top-content">
+                <h1 class="hero__title">КАКОЙ ДОМ ВАМ ПОДОЙДЁТ?</h1>
+                <p class="hero__subtitle">Пройдите тест за 1 минуту и узнайте стоимость!</p>
+            </div>
+        </div>
+
+        <!-- MOBILE: House image -->
+        <div class="hero__image-wrapper">
+            <img src="assets/img/hero-bg.jpg" alt="SIP-дом" class="hero__image" loading="eager">
+        </div>
+
+        <!-- MOBILE: Green torn paper text -->
+        <div class="hero__tape-wrapper">
+            <div class="hero__tape">
+                <p class="hero__tape-text">Ответьте на <strong>5 вопросов</strong><br>и узнайте точный расчёт!</p>
+            </div>
+        </div>
+
+        <!-- MOBILE: Bottom section with button and cards -->
+        <div class="hero__bottom">
+            <button class="btn btn--orange btn--lg hero__mobile-btn" data-scroll="quiz">
+                Пройти тест
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                    <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+                </svg>
+            </button>
+
+            <!-- Preview Cards -->
+            <div class="hero__cards">
+                <div class="hero__card" data-scroll="quiz">
+                    <div class="hero__card-icon">
+                        <!-- Дом с табличкой 100 м² - 3D -->
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <defs>
+                                <linearGradient id="roofGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#C9784D"/>
+                                    <stop offset="100%" style="stop-color:#8B4513"/>
+                                </linearGradient>
+                                <linearGradient id="wallGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ffffff"/>
+                                    <stop offset="100%" style="stop-color:#e0e0e0"/>
+                                </linearGradient>
+                                <linearGradient id="tagGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#4CAF50"/>
+                                    <stop offset="100%" style="stop-color:#2e7d32"/>
+                                </linearGradient>
+                                <filter id="shadow1" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feDropShadow dx="2" dy="3" stdDeviation="2" flood-opacity="0.3"/>
+                                </filter>
+                            </defs>
+                            <g filter="url(#shadow1)">
+                                <rect x="14" y="28" width="36" height="28" fill="url(#wallGrad1)" rx="1"/>
+                                <path d="M32 6L8 28h48L32 6z" fill="url(#roofGrad1)"/>
+                                <path d="M32 6L8 28L32 22L56 28L32 6z" fill="#D4956A" opacity="0.5"/>
+                                <rect x="26" y="38" width="12" height="18" fill="#6B4423" rx="1"/>
+                                <rect x="27" y="39" width="10" height="16" fill="url(#roofGrad1)" rx="1"/>
+                                <circle cx="35" cy="48" r="1.5" fill="#FFD700"/>
+                                <circle cx="35" cy="48" r="1" fill="#FFF8DC"/>
+                                <rect x="16" y="32" width="8" height="10" fill="#87CEEB" rx="1"/>
+                                <rect x="17" y="33" width="6" height="8" fill="#B0E0E6"/>
+                                <line x1="20" y1="33" x2="20" y2="41" stroke="#fff" stroke-width="0.8" opacity="0.7"/>
+                                <line x1="17" y1="37" x2="23" y2="37" stroke="#fff" stroke-width="0.8" opacity="0.7"/>
+                                <rect x="40" y="32" width="8" height="10" fill="#87CEEB" rx="1"/>
+                                <rect x="41" y="33" width="6" height="8" fill="#B0E0E6"/>
+                                <line x1="44" y1="33" x2="44" y2="41" stroke="#fff" stroke-width="0.8" opacity="0.7"/>
+                                <line x1="41" y1="37" x2="47" y2="37" stroke="#fff" stroke-width="0.8" opacity="0.7"/>
+                            </g>
+                            <g filter="url(#shadow1)">
+                                <rect x="4" y="16" width="24" height="14" rx="3" fill="url(#tagGrad1)"/>
+                                <rect x="5" y="17" width="22" height="4" rx="2" fill="#5cb85c" opacity="0.4"/>
+                                <text x="16" y="26" font-family="Arial" font-size="7" font-weight="bold" fill="white" text-anchor="middle">100 м²</text>
+                            </g>
+                        </svg>
+                    </div>
+                    <span class="hero__card-text">Выберите<br>площадь дома</span>
+                </div>
+                <div class="hero__card" data-scroll="quiz">
+                    <div class="hero__card-icon">
+                        <!-- Стильный домик - 3D -->
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <defs>
+                                <linearGradient id="roofGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#D4956A"/>
+                                    <stop offset="100%" style="stop-color:#8B4513"/>
+                                </linearGradient>
+                                <linearGradient id="wallGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#fff"/>
+                                    <stop offset="100%" style="stop-color:#ddd"/>
+                                </linearGradient>
+                                <linearGradient id="chimneyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#9e9e9e"/>
+                                    <stop offset="50%" style="stop-color:#bdbdbd"/>
+                                    <stop offset="100%" style="stop-color:#757575"/>
+                                </linearGradient>
+                                <filter id="shadow2" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feDropShadow dx="2" dy="3" stdDeviation="2" flood-opacity="0.3"/>
+                                </filter>
+                            </defs>
+                            <g filter="url(#shadow2)">
+                                <rect x="12" y="30" width="40" height="26" fill="url(#wallGrad2)" rx="1"/>
+                                <path d="M32 8L6 32h52L32 8z" fill="url(#roofGrad2)"/>
+                                <path d="M32 8L6 32L32 26L58 32L32 8z" fill="#E8B896" opacity="0.4"/>
+                                <rect x="26" y="40" width="12" height="16" fill="#5D3A1A" rx="1"/>
+                                <rect x="27" y="41" width="10" height="14" fill="#7D4E2A" rx="1"/>
+                                <path d="M27 41h10v3c0 0-2 2-5 2s-5-2-5-2v-3z" fill="#8B5A3C" opacity="0.3"/>
+                                <circle cx="35" cy="49" r="1.5" fill="#FFD700"/>
+                                <circle cx="35" cy="49" r="0.8" fill="#FFFACD"/>
+                                <rect x="16" y="36" width="8" height="10" fill="#6BB3D9" rx="1"/>
+                                <rect x="17" y="37" width="6" height="8" fill="#87CEEB"/>
+                                <line x1="20" y1="37" x2="20" y2="45" stroke="#fff" stroke-width="0.8" opacity="0.6"/>
+                                <line x1="17" y1="41" x2="23" y2="41" stroke="#fff" stroke-width="0.8" opacity="0.6"/>
+                                <rect x="40" y="36" width="8" height="10" fill="#6BB3D9" rx="1"/>
+                                <rect x="41" y="37" width="6" height="8" fill="#87CEEB"/>
+                                <line x1="44" y1="37" x2="44" y2="45" stroke="#fff" stroke-width="0.8" opacity="0.6"/>
+                                <line x1="41" y1="41" x2="47" y2="41" stroke="#fff" stroke-width="0.8" opacity="0.6"/>
+                                <rect x="46" y="12" width="7" height="20" fill="url(#chimneyGrad)" rx="1"/>
+                                <ellipse cx="49.5" cy="10" rx="5" ry="3" fill="#bdbdbd"/>
+                                <ellipse cx="49.5" cy="10" rx="3" ry="2" fill="#9e9e9e"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <span class="hero__card-text">Стиль<br>будущего дома</span>
+                </div>
+                <div class="hero__card" data-scroll="quiz">
+                    <div class="hero__card-icon">
+                        <!-- Кошелёк с деньгами - 3D -->
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <defs>
+                                <linearGradient id="walletGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#C9784D"/>
+                                    <stop offset="50%" style="stop-color:#8B4513"/>
+                                    <stop offset="100%" style="stop-color:#5D3A1A"/>
+                                </linearGradient>
+                                <linearGradient id="walletTop" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#A0522D"/>
+                                    <stop offset="100%" style="stop-color:#6B3510"/>
+                                </linearGradient>
+                                <linearGradient id="moneyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#4CAF50"/>
+                                    <stop offset="100%" style="stop-color:#2e7d32"/>
+                                </linearGradient>
+                                <linearGradient id="coinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#FFE55C"/>
+                                    <stop offset="50%" style="stop-color:#FFD700"/>
+                                    <stop offset="100%" style="stop-color:#DAA520"/>
+                                </linearGradient>
+                                <filter id="shadow3" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feDropShadow dx="2" dy="3" stdDeviation="2" flood-opacity="0.3"/>
+                                </filter>
+                            </defs>
+                            <g filter="url(#shadow3)">
+                                <rect x="8" y="24" width="48" height="32" rx="5" fill="url(#walletGrad)"/>
+                                <rect x="8" y="20" width="48" height="10" rx="3" fill="url(#walletTop)"/>
+                                <path d="M8 25h48v4c0 0-10 3-24 3s-24-3-24-3v-4z" fill="#5D3A1A" opacity="0.3"/>
+                                <ellipse cx="46" cy="40" rx="9" ry="9" fill="#5D3A1A"/>
+                                <ellipse cx="46" cy="39" rx="7" ry="7" fill="url(#coinGrad)"/>
+                                <ellipse cx="46" cy="38" rx="5" ry="5" fill="#FFEC8B" opacity="0.5"/>
+                                <circle cx="44" cy="37" r="1.5" fill="#fff" opacity="0.6"/>
+                            </g>
+                            <g filter="url(#shadow3)" transform="rotate(-8 28 14)">
+                                <rect x="12" y="4" width="32" height="18" rx="2" fill="url(#moneyGrad)"/>
+                                <rect x="14" y="6" width="28" height="14" fill="#3d8b40" opacity="0.3"/>
+                                <circle cx="28" cy="13" r="6" fill="#2e7d32" opacity="0.5"/>
+                                <text x="28" y="17" font-family="Arial" font-size="10" font-weight="bold" fill="#90EE90" text-anchor="middle">$</text>
+                                <rect x="14" y="6" width="4" height="14" fill="#228B22" opacity="0.3"/>
+                                <rect x="38" y="6" width="4" height="14" fill="#228B22" opacity="0.3"/>
+                            </g>
+                            <g filter="url(#shadow3)" transform="rotate(5 36 8)">
+                                <rect x="20" y="0" width="32" height="18" rx="2" fill="url(#moneyGrad)"/>
+                                <rect x="22" y="2" width="28" height="14" fill="#3d8b40" opacity="0.3"/>
+                                <circle cx="36" cy="9" r="6" fill="#2e7d32" opacity="0.5"/>
+                                <text x="36" y="13" font-family="Arial" font-size="10" font-weight="bold" fill="#90EE90" text-anchor="middle">$</text>
+                            </g>
+                        </svg>
+                    </div>
+                    <span class="hero__card-text">Бюджет<br>на строительство</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- DESKTOP: Content overlay -->
+        <div class="hero__content">
+            <!-- Wooden Banner -->
+            <div class="wood-banner">
+                <div class="wood-banner__inner">
+                    <h1 class="wood-banner__title">КАКОЙ ДОМ ВАМ ПОДОЙДЁТ?</h1>
+                </div>
+            </div>
+
+            <!-- Desktop subtitle -->
+            <p class="hero__subtitle hero__subtitle--desktop">Пройдите тест за 1 минуту и узнайте стоимость!</p>
+
+            <!-- Green CTA Block -->
+            <div class="hero__cta-block">
+                <p class="hero__cta-text">Ответьте на 5 вопросов и получите точный расчёт стоимости вашего дома</p>
+                <button class="btn btn--green btn--lg" data-scroll="quiz">
+                    Пройти тест
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                        <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Preview Cards (Desktop) -->
+            <div class="hero__cards">
+                <div class="hero__card" data-scroll="quiz">
+                    <div class="hero__card-icon">
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <defs>
+                                <linearGradient id="roofGradD1" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#C9784D"/>
+                                    <stop offset="100%" style="stop-color:#8B4513"/>
+                                </linearGradient>
+                                <linearGradient id="wallGradD1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ffffff"/>
+                                    <stop offset="100%" style="stop-color:#e0e0e0"/>
+                                </linearGradient>
+                                <linearGradient id="tagGradD1" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#4CAF50"/>
+                                    <stop offset="100%" style="stop-color:#2e7d32"/>
+                                </linearGradient>
+                            </defs>
+                            <g>
+                                <rect x="14" y="28" width="36" height="28" fill="url(#wallGradD1)" rx="1"/>
+                                <path d="M32 6L8 28h48L32 6z" fill="url(#roofGradD1)"/>
+                                <rect x="26" y="38" width="12" height="18" fill="#6B4423" rx="1"/>
+                                <rect x="16" y="32" width="8" height="10" fill="#87CEEB" rx="1"/>
+                                <rect x="40" y="32" width="8" height="10" fill="#87CEEB" rx="1"/>
+                            </g>
+                            <g>
+                                <rect x="4" y="16" width="24" height="14" rx="3" fill="url(#tagGradD1)"/>
+                                <text x="16" y="26" font-family="Arial" font-size="7" font-weight="bold" fill="white" text-anchor="middle">100 м²</text>
+                            </g>
+                        </svg>
+                    </div>
+                    <span class="hero__card-text">Выберите<br>площадь дома</span>
+                </div>
+                <div class="hero__card" data-scroll="quiz">
+                    <div class="hero__card-icon">
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <defs>
+                                <linearGradient id="roofGradD2" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#D4956A"/>
+                                    <stop offset="100%" style="stop-color:#8B4513"/>
+                                </linearGradient>
+                                <linearGradient id="wallGradD2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#fff"/>
+                                    <stop offset="100%" style="stop-color:#ddd"/>
+                                </linearGradient>
+                            </defs>
+                            <g>
+                                <rect x="12" y="30" width="40" height="26" fill="url(#wallGradD2)" rx="1"/>
+                                <path d="M32 8L6 32h52L32 8z" fill="url(#roofGradD2)"/>
+                                <rect x="26" y="40" width="12" height="16" fill="#5D3A1A" rx="1"/>
+                                <rect x="16" y="36" width="8" height="10" fill="#6BB3D9" rx="1"/>
+                                <rect x="40" y="36" width="8" height="10" fill="#6BB3D9" rx="1"/>
+                                <rect x="46" y="12" width="7" height="20" fill="#9e9e9e" rx="1"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <span class="hero__card-text">Стиль<br>будущего дома</span>
+                </div>
+                <div class="hero__card" data-scroll="quiz">
+                    <div class="hero__card-icon">
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <defs>
+                                <linearGradient id="walletGradD" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#C9784D"/>
+                                    <stop offset="100%" style="stop-color:#5D3A1A"/>
+                                </linearGradient>
+                                <linearGradient id="moneyGradD" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#4CAF50"/>
+                                    <stop offset="100%" style="stop-color:#2e7d32"/>
+                                </linearGradient>
+                                <linearGradient id="coinGradD" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#FFE55C"/>
+                                    <stop offset="100%" style="stop-color:#DAA520"/>
+                                </linearGradient>
+                            </defs>
+                            <g>
+                                <rect x="8" y="24" width="48" height="32" rx="5" fill="url(#walletGradD)"/>
+                                <ellipse cx="46" cy="39" rx="7" ry="7" fill="url(#coinGradD)"/>
+                            </g>
+                            <g transform="rotate(-8 28 14)">
+                                <rect x="12" y="4" width="32" height="18" rx="2" fill="url(#moneyGradD)"/>
+                                <text x="28" y="17" font-family="Arial" font-size="10" font-weight="bold" fill="#90EE90" text-anchor="middle">$</text>
+                            </g>
+                        </svg>
+                    </div>
+                    <span class="hero__card-text">Бюджет<br>на строительство</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+                            ADVANTAGES SECTION
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="advantages" id="advantages">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-title__accent">SIP-дома под ключ</span>
+                от 1,35 млн ₽
+            </h2>
+            <p class="section-subtitle">Строим тёплые, энергоэффективные дома за 30–60 дней по типовым и индивидуальным проектам</p>
+
+            <div class="advantages__grid">
+                <div class="advantage-card">
+                    <div class="advantage-card__icon">
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <rect x="8" y="24" width="48" height="32" rx="4" fill="#e8f5e9"/>
+                            <rect x="16" y="32" width="12" height="16" fill="#2e7d32"/>
+                            <rect x="36" y="32" width="12" height="16" fill="#2e7d32"/>
+                            <path d="M4 28L32 8L60 28" stroke="#2e7d32" stroke-width="4" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="advantage-card__title">Собственное производство</h3>
+                    <p class="advantage-card__text">SIP-панели собственного производства — контроль качества на каждом этапе</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-card__icon">
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <circle cx="32" cy="32" r="24" fill="#e8f5e9"/>
+                            <circle cx="32" cy="32" r="20" stroke="#2e7d32" stroke-width="4"/>
+                            <path d="M32 18v14l10 10" stroke="#2e7d32" stroke-width="4" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="advantage-card__title">Срок от 30 дней</h3>
+                    <p class="advantage-card__text">Быстрое строительство без потери качества — въезжайте в новый дом уже через месяц</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-card__icon">
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <circle cx="32" cy="32" r="24" fill="#e8f5e9"/>
+                            <path d="M32 16v32M24 24c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8-8 3.582-8 8 3.582 8 8 8 8-3.582 8-8" stroke="#2e7d32" stroke-width="4" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="advantage-card__title">Фиксированная цена</h3>
+                    <p class="advantage-card__text">Стоимость фиксируется в договоре — никаких скрытых платежей и доплат</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-card__icon">
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <rect x="8" y="20" width="48" height="36" rx="4" fill="#e8f5e9"/>
+                            <path d="M4 24L32 8L60 24" stroke="#2e7d32" stroke-width="4" stroke-linecap="round"/>
+                            <path d="M24 36h16M24 44h12" stroke="#2e7d32" stroke-width="3" stroke-linecap="round"/>
+                            <circle cx="48" cy="48" r="12" fill="#f57c00"/>
+                            <path d="M48 42v12M42 48h12" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="advantage-card__title">Ипотека и маткапитал</h3>
+                    <p class="advantage-card__text">Работаем с банками — поможем оформить ипотеку или использовать материнский капитал</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+                             CATALOG SECTION
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="catalog" id="catalog">
+        <div class="container">
+            <h2 class="section-title section-title--white">
+                Каталог <span class="section-title__accent">домов</span>
+            </h2>
+
+            <div class="catalog__grid">
+                <!-- House 1 -->
+                <article class="house-card">
+                    <div class="house-card__image">
+                        <img src="assets/img/quiz/quiz-classic-mini.webp" alt="CLASSIC MINI — 36 м²" loading="lazy">
+                        <span class="house-card__badge house-card__badge--hit">Хит продаж</span>
+                    </div>
+                    <div class="house-card__body">
+                        <h3 class="house-card__title">CLASSIC MINI</h3>
+                        <div class="house-card__info">
+                            <span class="house-card__area">36 м²</span>
+                            <span class="house-card__price">от 1,35 млн ₽</span>
+                        </div>
+                        <ul class="house-card__features">
+                            <li>1 спальня</li>
+                            <li>кухня-гостиная</li>
+                            <li>санузел</li>
+                        </ul>
+                        <div class="house-card__actions">
+                            <button class="btn btn--outline-green btn--sm" data-modal="house" data-house="classic-mini">Подробнее</button>
+                            <button class="btn btn--orange btn--sm" data-modal="calc" data-house="CLASSIC MINI">Рассчитать</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- House 2 -->
+                <article class="house-card">
+                    <div class="house-card__image">
+                        <img src="assets/img/quiz/quiz-comfort.webp" alt="CLASSIC COMFORT — 48 м²" loading="lazy">
+                    </div>
+                    <div class="house-card__body">
+                        <h3 class="house-card__title">CLASSIC COMFORT</h3>
+                        <div class="house-card__info">
+                            <span class="house-card__area">48 м²</span>
+                            <span class="house-card__price">от 1,6 млн ₽</span>
+                        </div>
+                        <ul class="house-card__features">
+                            <li>2 комнаты</li>
+                            <li>кухня-гостиная</li>
+                            <li>котельная</li>
+                        </ul>
+                        <div class="house-card__actions">
+                            <button class="btn btn--outline-green btn--sm" data-modal="house" data-house="classic-comfort">Подробнее</button>
+                            <button class="btn btn--orange btn--sm" data-modal="calc" data-house="CLASSIC COMFORT">Рассчитать</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- House 3 -->
+                <article class="house-card">
+                    <div class="house-card__image">
+                        <img src="assets/img/quiz/quiz-family.webp" alt="CLASSIC FAMILY — 72 м²" loading="lazy">
+                        <span class="house-card__badge house-card__badge--family">Для семьи</span>
+                    </div>
+                    <div class="house-card__body">
+                        <h3 class="house-card__title">CLASSIC FAMILY</h3>
+                        <div class="house-card__info">
+                            <span class="house-card__area">72 м²</span>
+                            <span class="house-card__price">от 2,27 млн ₽</span>
+                        </div>
+                        <ul class="house-card__features">
+                            <li>3 спальни</li>
+                            <li>большая кухня-гостиная</li>
+                        </ul>
+                        <div class="house-card__actions">
+                            <button class="btn btn--outline-green btn--sm" data-modal="house" data-house="classic-family">Подробнее</button>
+                            <button class="btn btn--orange btn--sm" data-modal="calc" data-house="CLASSIC FAMILY">Рассчитать</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- House 4 -->
+                <article class="house-card">
+                    <div class="house-card__image">
+                        <img src="assets/img/quiz/quiz-max.webp" alt="CLASSIC MAX — 96 м²" loading="lazy">
+                        <span class="house-card__badge house-card__badge--max">Максимум</span>
+                    </div>
+                    <div class="house-card__body">
+                        <h3 class="house-card__title">CLASSIC MAX</h3>
+                        <div class="house-card__info">
+                            <span class="house-card__area">96 м²</span>
+                            <span class="house-card__price">от 2,75 млн ₽</span>
+                        </div>
+                        <ul class="house-card__features">
+                            <li>4 комнаты</li>
+                            <li>2 санузла</li>
+                        </ul>
+                        <div class="house-card__actions">
+                            <button class="btn btn--outline-green btn--sm" data-modal="house" data-house="classic-max">Подробнее</button>
+                            <button class="btn btn--orange btn--sm" data-modal="calc" data-house="CLASSIC MAX">Рассчитать</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+                            PACKAGES SECTION
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="packages" id="packages">
+        <div class="container">
+            <h2 class="section-title">
+                Комплектации <span class="section-title__accent">домов</span>
+            </h2>
+
+            <div class="packages__grid">
+                <div class="package-card">
+                    <div class="package-card__header package-card__header--basic">
+                        <h3 class="package-card__title">Тёплый контур</h3>
+                        <span class="package-card__badge">Базовая</span>
+                    </div>
+                    <ul class="package-card__list">
+                        <li class="package-card__item package-card__item--included">
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                            Фундамент на сваях
+                        </li>
+                        <li class="package-card__item package-card__item--included">
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                            SIP-коробка дома
+                        </li>
+                        <li class="package-card__item package-card__item--included">
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                            Кровля под ключ
+                        </li>
+                        <li class="package-card__item package-card__item--included">
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                            Окна и входная дверь
+                        </li>
+                    </ul>
+                    <button class="btn btn--green package-card__btn" data-modal="calc" data-package="Тёплый контур">Рассчитать</button>
+                </div>
+
+                <div class="package-card package-card--popular">
+                    <div class="package-card__header package-card__header--comfort">
+                        <h3 class="package-card__title">Комфорт</h3>
+                        <span class="package-card__badge">Популярная</span>
+                    </div>
+                    <ul class="package-card__list">
+                        <li class="package-card__item package-card__item--included">
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                            Всё из «Тёплый контур»
+                        </li>
+                        <li class="package-card__item package-card__item--included">
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                            Электрика и разводка
+                        </li>
+                        <li class="package-card__item package-card__item--included">
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                            Водопровод и канализация
+                        </li>
+                        <li class="package-card__item package-card__item--included">
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                            Черновая отделка
+                        </li>
+                    </ul>
+                    <button class="btn btn--orange package-card__btn" data-modal="calc" data-package="Комфорт">Рассчитать</button>
+                </div>
+
+                <div class="package-card">
+                    <div class="package-card__header package-card__header--turnkey">
+                        <h3 class="package-card__title">Под ключ</h3>
+                        <span class="package-card__badge">Максимум</span>
+                    </div>
+                    <ul class="package-card__list">
+                        <li class="package-card__item package-card__item--included">
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                            Всё из «Комфорт»
+                        </li>
+                        <li class="package-card__item package-card__item--included">
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                            Чистовая отделка
+                        </li>
+                        <li class="package-card__item package-card__item--included">
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                            Сантехника и освещение
+                        </li>
+                        <li class="package-card__item package-card__item--included">
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                            Заезжай и живи!
+                        </li>
+                    </ul>
+                    <button class="btn btn--green package-card__btn" data-modal="calc" data-package="Под ключ">Рассчитать</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+                             MORTGAGE SECTION
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="mortgage" id="mortgage">
+        <div class="container">
+            <div class="mortgage__inner">
+                <div class="mortgage__content">
+                    <h2 class="section-title section-title--left">
+                        Ипотека и <span class="section-title__accent">оплата</span>
+                    </h2>
+                    <p class="mortgage__text">Работаем с ведущими банками России. Поможем подобрать выгодную программу и оформить документы.</p>
+
+                    <ul class="mortgage__list">
+                        <li class="mortgage__item">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            <span><strong>Семейная ипотека</strong> — от 6% годовых</span>
+                        </li>
+                        <li class="mortgage__item">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            <span><strong>Сельская ипотека</strong> — от 3% годовых</span>
+                        </li>
+                        <li class="mortgage__item">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            <span><strong>Материнский капитал</strong> — принимаем</span>
+                        </li>
+                        <li class="mortgage__item">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            <span><strong>Фиксируем цену</strong> в договоре</span>
+                        </li>
+                    </ul>
+
+                    <button class="btn btn--green btn--lg" data-modal="mortgage">
+                        Узнать об ипотеке
+                    </button>
+                </div>
+                <div class="mortgage__image">
+                    <img src="assets/img/mortgage-house.webp" alt="Ипотека на SIP-дом" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+                              PROCESS SECTION
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="process" id="process">
+        <div class="container">
+            <h2 class="section-title">
+                Как мы <span class="section-title__accent">работаем</span>
+            </h2>
+
+            <div class="process__timeline">
+                <div class="process__step">
+                    <div class="process__number">1</div>
+                    <div class="process__content">
+                        <h3 class="process__title">Консультация и расчёт</h3>
+                        <p class="process__text">Обсуждаем ваши пожелания, подбираем проект и рассчитываем стоимость</p>
+                    </div>
+                </div>
+
+                <div class="process__step">
+                    <div class="process__number">2</div>
+                    <div class="process__content">
+                        <h3 class="process__title">Проект и договор</h3>
+                        <p class="process__text">Готовим проектную документацию, фиксируем цену и сроки в договоре</p>
+                    </div>
+                </div>
+
+                <div class="process__step">
+                    <div class="process__number">3</div>
+                    <div class="process__content">
+                        <h3 class="process__title">Производство и монтаж</h3>
+                        <p class="process__text">Изготавливаем SIP-панели на своём производстве и строим дом на участке</p>
+                    </div>
+                </div>
+
+                <div class="process__step">
+                    <div class="process__number">4</div>
+                    <div class="process__content">
+                        <h3 class="process__title">Сдача с гарантией</h3>
+                        <p class="process__text">Сдаём готовый дом с гарантией качества. Въезжайте и живите!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+                               QUIZ SECTION
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="quiz" id="quiz">
+        <div class="quiz__bg"></div>
+        <div class="container">
+            <div class="quiz__container">
+                <!-- Quiz Header -->
+                <div class="quiz__header">
+                    <div class="wood-banner wood-banner--sm">
+                        <div class="wood-banner__inner">
+                            <h2 class="wood-banner__title">ПОДБЕРЁМ ВАШ ИДЕАЛЬНЫЙ ДОМ</h2>
+                        </div>
+                    </div>
+                    <p class="quiz__subtitle">Ответьте на 7 вопросов и получите расчёт стоимости + подарок</p>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="quiz__progress">
+                    <div class="quiz__progress-bar">
+                        <div class="quiz__progress-fill" id="quiz-progress"></div>
+                    </div>
+                    <div class="quiz__progress-steps">
+                        <span class="quiz__progress-step active" data-step="1">1</span>
+                        <span class="quiz__progress-step" data-step="2">2</span>
+                        <span class="quiz__progress-step" data-step="3">3</span>
+                        <span class="quiz__progress-step" data-step="4">4</span>
+                        <span class="quiz__progress-step" data-step="5">5</span>
+                        <span class="quiz__progress-step" data-step="6">6</span>
+                        <span class="quiz__progress-step" data-step="7">7</span>
+                    </div>
+                </div>
+
+                <!-- Quiz Steps -->
+                <div class="quiz__steps" id="quiz-steps">
+                    <!-- Step 1: House Type -->
+                    <div class="quiz__step active" data-step="1">
+                        <h3 class="quiz__question">Какой дом вы рассматриваете?</h3>
+                        <div class="quiz__options quiz__options--grid">
+                            <label class="quiz__option quiz__option--image">
+                                <input type="radio" name="house" value="CLASSIC MINI — 36 м²">
+                                <span class="quiz__option-inner">
+                                    <img src="assets/img/quiz/quiz-classic-mini.webp" alt="CLASSIC MINI" class="quiz__option-img">
+                                    <span class="quiz__option-text">CLASSIC MINI</span>
+                                    <span class="quiz__option-sub">36 м²</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option quiz__option--image">
+                                <input type="radio" name="house" value="CLASSIC COMFORT — 48 м²">
+                                <span class="quiz__option-inner">
+                                    <img src="assets/img/quiz/quiz-comfort.webp" alt="CLASSIC COMFORT" class="quiz__option-img">
+                                    <span class="quiz__option-text">CLASSIC COMFORT</span>
+                                    <span class="quiz__option-sub">48 м²</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option quiz__option--image">
+                                <input type="radio" name="house" value="CLASSIC FAMILY — 72 м²">
+                                <span class="quiz__option-inner">
+                                    <img src="assets/img/quiz/quiz-family.webp" alt="CLASSIC FAMILY" class="quiz__option-img">
+                                    <span class="quiz__option-text">CLASSIC FAMILY</span>
+                                    <span class="quiz__option-sub">72 м²</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option quiz__option--image">
+                                <input type="radio" name="house" value="CLASSIC MAX — 96 м²">
+                                <span class="quiz__option-inner">
+                                    <img src="assets/img/quiz/quiz-max.webp" alt="CLASSIC MAX" class="quiz__option-img">
+                                    <span class="quiz__option-text">CLASSIC MAX</span>
+                                    <span class="quiz__option-sub">96 м²</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option quiz__option--full">
+                                <input type="radio" name="house" value="Пока не определился">
+                                <span class="quiz__option-inner">
+                                    <span class="quiz__option-text">Пока не определился</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Purpose -->
+                    <div class="quiz__step" data-step="2">
+                        <h3 class="quiz__question">Для каких целей вы строите дом?</h3>
+                        <div class="quiz__options">
+                            <label class="quiz__option">
+                                <input type="radio" name="purpose" value="Для постоянного проживания">
+                                <span class="quiz__option-inner">
+                                    <span class="quiz__option-icon">🏠</span>
+                                    <span class="quiz__option-text">Для постоянного проживания</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option">
+                                <input type="radio" name="purpose" value="Дача / загородный дом">
+                                <span class="quiz__option-inner">
+                                    <span class="quiz__option-icon">🌲</span>
+                                    <span class="quiz__option-text">Дача / загородный дом</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option">
+                                <input type="radio" name="purpose" value="Для семьи">
+                                <span class="quiz__option-inner">
+                                    <span class="quiz__option-icon">👨‍👩‍👧‍👦</span>
+                                    <span class="quiz__option-text">Для семьи</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option">
+                                <input type="radio" name="purpose" value="Под сдачу / инвестиции">
+                                <span class="quiz__option-inner">
+                                    <span class="quiz__option-icon">💼</span>
+                                    <span class="quiz__option-text">Под сдачу / инвестиции</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Land -->
+                    <div class="quiz__step" data-step="3">
+                        <h3 class="quiz__question">У вас уже есть участок?</h3>
+                        <div class="quiz__options">
+                            <label class="quiz__option">
+                                <input type="radio" name="land" value="Да, участок есть">
+                                <span class="quiz__option-inner">
+                                    <span class="quiz__option-icon">✅</span>
+                                    <span class="quiz__option-text">Да, участок есть</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option">
+                                <input type="radio" name="land" value="В процессе покупки">
+                                <span class="quiz__option-inner">
+                                    <span class="quiz__option-icon">📝</span>
+                                    <span class="quiz__option-text">В процессе покупки</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option">
+                                <input type="radio" name="land" value="Нет, нужна помощь">
+                                <span class="quiz__option-inner">
+                                    <span class="quiz__option-icon">🔍</span>
+                                    <span class="quiz__option-text">Нет, нужна помощь</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Package -->
+                    <div class="quiz__step" data-step="4">
+                        <h3 class="quiz__question">В какой комплектации нужен дом?</h3>
+                        <div class="quiz__options">
+                            <label class="quiz__option">
+                                <input type="radio" name="package" value="Тёплый контур">
+                                <span class="quiz__option-inner">
+                                    <span class="quiz__option-icon">🏗️</span>
+                                    <span class="quiz__option-text">Тёплый контур</span>
+                                    <span class="quiz__option-desc">Коробка + кровля + окна</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option">
+                                <input type="radio" name="package" value="Комфорт">
+                                <span class="quiz__option-inner">
+                                    <span class="quiz__option-icon">🔧</span>
+                                    <span class="quiz__option-text">Комфорт</span>
+                                    <span class="quiz__option-desc">+ инженерия + черновая отделка</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option">
+                                <input type="radio" name="package" value="Под ключ">
+                                <span class="quiz__option-inner">
+                                    <span class="quiz__option-icon">🔑</span>
+                                    <span class="quiz__option-text">Под ключ</span>
+                                    <span class="quiz__option-desc">Заезжай и живи</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option">
+                                <input type="radio" name="package" value="Нужна консультация">
+                                <span class="quiz__option-inner">
+                                    <span class="quiz__option-icon">💬</span>
+                                    <span class="quiz__option-text">Нужна консультация</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Mortgage -->
+                    <div class="quiz__step" data-step="5">
+                        <h3 class="quiz__question">Планируете ли использовать ипотеку?</h3>
+                        <div class="quiz__options">
+                            <label class="quiz__option">
+                                <input type="radio" name="mortgage" value="Да, семейная ипотека">
+                                <span class="quiz__option-inner">
+                                    <span class="quiz__option-icon">👨‍👩‍👧</span>
+                                    <span class="quiz__option-text">Да, семейная ипотека</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option">
+                                <input type="radio" name="mortgage" value="Да, сельская ипотека">
+                                <span class="quiz__option-inner">
+                                    <span class="quiz__option-icon">🌾</span>
+                                    <span class="quiz__option-text">Да, сельская ипотека</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option">
+                                <input type="radio" name="mortgage" value="Нет, оплата наличными">
+                                <span class="quiz__option-inner">
+                                    <span class="quiz__option-icon">💵</span>
+                                    <span class="quiz__option-text">Нет, оплата наличными</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option">
+                                <input type="radio" name="mortgage" value="Пока не знаю">
+                                <span class="quiz__option-inner">
+                                    <span class="quiz__option-icon">🤔</span>
+                                    <span class="quiz__option-text">Пока не знаю</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 6: Timeline -->
+                    <div class="quiz__step" data-step="6">
+                        <h3 class="quiz__question">Когда планируете начать строительство?</h3>
+                        <div class="quiz__options">
+                            <label class="quiz__option">
+                                <input type="radio" name="timeline" value="В ближайший месяц">
+                                <span class="quiz__option-inner">
+                                    <span class="quiz__option-icon">🚀</span>
+                                    <span class="quiz__option-text">В ближайший месяц</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option">
+                                <input type="radio" name="timeline" value="В течение 2–3 месяцев">
+                                <span class="quiz__option-inner">
+                                    <span class="quiz__option-icon">📅</span>
+                                    <span class="quiz__option-text">В течение 2–3 месяцев</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option">
+                                <input type="radio" name="timeline" value="Через полгода">
+                                <span class="quiz__option-inner">
+                                    <span class="quiz__option-icon">🗓️</span>
+                                    <span class="quiz__option-text">Через полгода</span>
+                                </span>
+                            </label>
+                            <label class="quiz__option">
+                                <input type="radio" name="timeline" value="Пока выбираю">
+                                <span class="quiz__option-inner">
+                                    <span class="quiz__option-icon">🔎</span>
+                                    <span class="quiz__option-text">Пока выбираю</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 7: Contacts -->
+                    <div class="quiz__step" data-step="7">
+                        <h3 class="quiz__question">Куда отправить расчёт?</h3>
+
+                        <div class="quiz__gift">
+                            <div class="quiz__gift-icon">🎁</div>
+                            <div class="quiz__gift-text">
+                                <strong>Укажите регион — и получите беседку в подарок!</strong>
+                            </div>
+                        </div>
+
+                        <div class="quiz__form">
+                            <div class="quiz__form-group">
+                                <label class="quiz__label" for="quiz-name">Ваше имя *</label>
+                                <input type="text" id="quiz-name" name="name" class="quiz__input" placeholder="Иван" required>
+                            </div>
+
+                            <div class="quiz__form-group">
+                                <label class="quiz__label" for="quiz-phone">Телефон *</label>
+                                <input type="tel" id="quiz-phone" name="phone" class="quiz__input" placeholder="+7 (___) ___-__-__" required>
+                            </div>
+
+                            <div class="quiz__form-group">
+                                <label class="quiz__label">Удобный способ связи</label>
+                                <div class="quiz__contact-methods">
+                                    <label class="quiz__contact-method">
+                                        <input type="radio" name="contact_method" value="Звонок" checked>
+                                        <span>📞 Звонок</span>
+                                    </label>
+                                    <label class="quiz__contact-method">
+                                        <input type="radio" name="contact_method" value="WhatsApp / Telegram">
+                                        <span>💬 WhatsApp / Telegram</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="quiz__form-group">
+                                <label class="quiz__label" for="quiz-region">Регион</label>
+                                <select id="quiz-region" name="region" class="quiz__select">
+                                    <option value="">Выберите регион</option>
+                                    <option value="Марий Эл">Марий Эл</option>
+                                    <option value="Татарстан">Татарстан</option>
+                                    <option value="Чувашия">Чувашия</option>
+                                    <option value="Краснодарский край">Краснодарский край</option>
+                                    <option value="Другой">Другой</option>
+                                </select>
+                            </div>
+
+                            <div class="quiz__form-group quiz__form-group--other" id="other-region-group" style="display: none;">
+                                <label class="quiz__label" for="quiz-other-region">Введите ваш регион</label>
+                                <input type="text" id="quiz-other-region" name="other_region" class="quiz__input" placeholder="Ваш регион">
+                            </div>
+
+                            <!-- Honeypot -->
+                            <input type="text" name="website" class="quiz__honeypot" tabindex="-1" autocomplete="off">
+                        </div>
+
+                        <p class="quiz__disclaimer">Расчёт стоимости и консультация — бесплатно</p>
+                    </div>
+
+                    <!-- Success Step -->
+                    <div class="quiz__step quiz__step--success" data-step="success">
+                        <div class="quiz__success">
+                            <div class="quiz__success-icon">✅</div>
+                            <h3 class="quiz__success-title">Спасибо за заявку!</h3>
+                            <p class="quiz__success-text">Мы свяжемся с вами в ближайшее время для уточнения деталей и расчёта стоимости.</p>
+                            <a href="assets/pdf/catalog.pdf" download class="btn btn--green btn--lg quiz__download">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                                    <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                                </svg>
+                                Скачать каталог
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quiz Navigation -->
+                <div class="quiz__nav" id="quiz-nav">
+                    <button type="button" class="btn btn--outline-white quiz__btn quiz__btn--prev" id="quiz-prev" style="display: none;">
+                        Назад
+                    </button>
+                    <button type="button" class="btn btn--green btn--lg quiz__btn quiz__btn--next" id="quiz-next">
+                        Далее
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="btn btn--orange btn--lg quiz__btn quiz__btn--submit" id="quiz-submit" style="display: none;">
+                        Получить расчёт
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+                             ABOUT SECTION
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about__inner">
+                <div class="about__content">
+                    <h2 class="section-title section-title--left">
+                        О компании <span class="section-title__accent">МариСип</span>
+                    </h2>
+                    <p class="about__text">
+                        МариСип — строительная компания в Марий Эл. Мы специализируемся на строительстве SIP-домов для постоянного проживания и дач.
+                    </p>
+                    <ul class="about__list">
+                        <li class="about__item">
+                            <span class="about__item-value">5+</span>
+                            <span class="about__item-label">лет опыта работы</span>
+                        </li>
+                        <li class="about__item">
+                            <span class="about__item-value">100+</span>
+                            <span class="about__item-label">построенных объектов</span>
+                        </li>
+                        <li class="about__item">
+                            <span class="about__item-value">5</span>
+                            <span class="about__item-label">лет гарантии по договору</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="about__image">
+                    <img src="assets/img/about-company.png" alt="О компании МариСип" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+                            REVIEWS SECTION
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <h2 class="section-title">
+                Отзывы <span class="section-title__accent">клиентов</span>
+            </h2>
+
+            <!-- Yandex Map Widget -->
+            <div class="reviews__yandex">
+                <iframe
+                    src="https://yandex.ru/maps-reviews-widget/8399065905?comments"
+                    width="100%"
+                    height="400"
+                    frameborder="0"
+                    loading="lazy"
+                    title="Отзывы на Яндекс Картах"
+                ></iframe>
+            </div>
+
+            <!-- Manual Reviews Slider -->
+            <div class="reviews__slider" id="reviews-slider">
+                <div class="reviews__track">
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <div class="review-card__avatar">АИ</div>
+                            <div class="review-card__info">
+                                <span class="review-card__name">Алексей Иванов</span>
+                                <span class="review-card__date">Декабрь 2025</span>
+                            </div>
+                            <div class="review-card__rating">
+                                <span>★★★★★</span>
+                            </div>
+                        </div>
+                        <p class="review-card__text">Построили дом CLASSIC COMFORT за 45 дней. Качество отличное, все сроки соблюдены. Отдельное спасибо за помощь с ипотекой!</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <div class="review-card__avatar">МС</div>
+                            <div class="review-card__info">
+                                <span class="review-card__name">Мария Сергеева</span>
+                                <span class="review-card__date">Ноябрь 2025</span>
+                            </div>
+                            <div class="review-card__rating">
+                                <span>★★★★★</span>
+                            </div>
+                        </div>
+                        <p class="review-card__text">Долго выбирали между каркасом и СИП. Остановились на МариСип и не пожалели. Дом тёплый, зимой отопление минимальное.</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <div class="review-card__avatar">ДК</div>
+                            <div class="review-card__info">
+                                <span class="review-card__name">Дмитрий Козлов</span>
+                                <span class="review-card__date">Октябрь 2025</span>
+                            </div>
+                            <div class="review-card__rating">
+                                <span>★★★★★</span>
+                            </div>
+                        </div>
+                        <p class="review-card__text">Заказывал CLASSIC FAMILY для семьи. Три спальни, просторная гостиная — всё как хотели. Цена не изменилась с момента подписания договора.</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <div class="review-card__avatar">ЕП</div>
+                            <div class="review-card__info">
+                                <span class="review-card__name">Елена Петрова</span>
+                                <span class="review-card__date">Сентябрь 2025</span>
+                            </div>
+                            <div class="review-card__rating">
+                                <span>★★★★★</span>
+                            </div>
+                        </div>
+                        <p class="review-card__text">Использовали материнский капитал как первый взнос. Менеджеры помогли со всеми документами. Дом получился замечательный!</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <div class="review-card__avatar">СН</div>
+                            <div class="review-card__info">
+                                <span class="review-card__name">Сергей Николаев</span>
+                                <span class="review-card__date">Август 2025</span>
+                            </div>
+                            <div class="review-card__rating">
+                                <span>★★★★★</span>
+                            </div>
+                        </div>
+                        <p class="review-card__text">Строили дачу в Краснодарском крае. Несмотря на расстояние, всё организовали отлично. Рекомендую!</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <div class="review-card__avatar">ОВ</div>
+                            <div class="review-card__info">
+                                <span class="review-card__name">Ольга Васильева</span>
+                                <span class="review-card__date">Июль 2025</span>
+                            </div>
+                            <div class="review-card__rating">
+                                <span>★★★★★</span>
+                            </div>
+                        </div>
+                        <p class="review-card__text">CLASSIC MINI идеально подошёл для нашей дачи. Компактный, но очень уютный. Строили по сельской ипотеке под 3%.</p>
+                    </div>
+                </div>
+
+                <div class="reviews__nav">
+                    <button class="reviews__arrow reviews__arrow--prev" aria-label="Предыдущий отзыв">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                    </button>
+                    <button class="reviews__arrow reviews__arrow--next" aria-label="Следующий отзыв">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="reviews__cta">
+                <a href="https://yandex.ru/profile/8399065905?lang=ru" target="_blank" rel="noopener" class="btn btn--outline-green btn--lg">
+                    Смотреть все отзывы на Яндекс
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                        <path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+                            CONTACTS SECTION
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="contacts" id="contacts">
+        <div class="container">
+            <h2 class="section-title section-title--white">
+                Свяжитесь <span class="section-title__accent">с нами</span>
+            </h2>
+
+            <div class="contacts__inner">
+                <div class="contacts__info">
+                    <div class="contacts__item">
+                        <div class="contacts__icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                            </svg>
+                        </div>
+                        <div class="contacts__text">
+                            <strong>Адрес</strong>
+                            <span>Марий Эл, г. Йошкар-Ола,<br>ул. Красноармейская слобода 44А</span>
+                        </div>
+                    </div>
+
+                    <div class="contacts__item">
+                        <div class="contacts__icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                        </div>
+                        <div class="contacts__text">
+                            <strong>Телефон</strong>
+                            <a href="tel:+79996092666">8 (999) 609-26-66</a>
+                        </div>
+                    </div>
+
+                    <div class="contacts__item">
+                        <div class="contacts__icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                            </svg>
+                        </div>
+                        <div class="contacts__text">
+                            <strong>Организация</strong>
+                            <span>ООО "ТРИУМФ-12"</span>
+                        </div>
+                    </div>
+
+                    <div class="contacts__socials">
+                        <a href="https://wa.me/79996092666" class="contacts__social" aria-label="WhatsApp">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </a>
+                        <a href="https://t.me/+79996092666" class="contacts__social" aria-label="Telegram">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contact-form">
+                    <h3 class="contact-form__title">Оставить заявку</h3>
+
+                    <div class="contact-form__group">
+                        <input type="text" name="name" class="contact-form__input" placeholder="Ваше имя *" required>
+                    </div>
+
+                    <div class="contact-form__group">
+                        <input type="tel" name="phone" class="contact-form__input" placeholder="Телефон *" required>
+                    </div>
+
+                    <div class="contact-form__group">
+                        <textarea name="comment" class="contact-form__textarea" placeholder="Комментарий" rows="3"></textarea>
+                    </div>
+
+                    <!-- Honeypot -->
+                    <input type="text" name="company" class="contact-form__honeypot" tabindex="-1" autocomplete="off">
+
+                    <button type="submit" class="btn btn--green btn--lg contact-form__btn">
+                        Отправить заявку
+                    </button>
+
+                    <p class="contact-form__privacy">
+                        Нажимая кнопку, вы соглашаетесь с обработкой персональных данных
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+                                 FOOTER
+    ═══════════════════════════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__brand">
+                    <a href="#" class="footer__logo">
+                        <div class="footer__logo-icon">
+                            <svg viewBox="0 0 40 40" fill="none">
+                                <path d="M20 4L4 18h5v18h22V18h5L20 4z" fill="#fff"/>
+                                <rect x="16" y="24" width="8" height="12" fill="#2e7d32"/>
+                            </svg>
+                        </div>
+                        <span class="footer__logo-text">МариСип</span>
+                    </a>
+                    <p class="footer__company">ООО "ТРИУМФ-12"</p>
+                </div>
+
+                <nav class="footer__nav">
+                    <a href="#catalog">Каталог</a>
+                    <a href="#packages">Комплектации</a>
+                    <a href="#mortgage">Ипотека</a>
+                    <a href="#process">Как работаем</a>
+                    <a href="#reviews">Отзывы</a>
+                    <a href="#contacts">Контакты</a>
+                </nav>
+
+                <div class="footer__contacts">
+                    <a href="tel:+79996092666" class="footer__phone">8 (999) 609-26-66</a>
+                    <div class="footer__socials">
+                        <a href="https://wa.me/79996092666" aria-label="WhatsApp">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </a>
+                        <a href="https://t.me/+79996092666" aria-label="Telegram">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2025 МариСип. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+                                MODALS
+    ═══════════════════════════════════════════════════════════════ -->
+    <div class="modal" id="modal-consult">
+        <div class="modal__overlay"></div>
+        <div class="modal__container">
+            <button class="modal__close" aria-label="Закрыть">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </button>
+            <div class="modal__content">
+                <h3 class="modal__title">Получить консультацию</h3>
+                <p class="modal__subtitle">Оставьте заявку, и мы перезвоним вам</p>
+                <form class="modal__form" data-form="consult">
+                    <input type="text" name="name" class="modal__input" placeholder="Ваше имя *" required>
+                    <input type="tel" name="phone" class="modal__input" placeholder="Телефон *" required>
+                    <input type="text" name="website" class="modal__honeypot" tabindex="-1" autocomplete="off">
+                    <button type="submit" class="btn btn--green btn--lg modal__btn">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-calc">
+        <div class="modal__overlay"></div>
+        <div class="modal__container">
+            <button class="modal__close" aria-label="Закрыть">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </button>
+            <div class="modal__content">
+                <h3 class="modal__title">Рассчитать стоимость</h3>
+                <p class="modal__subtitle" id="calc-subtitle">Укажите данные для расчёта</p>
+                <form class="modal__form" data-form="calc">
+                    <input type="text" name="name" class="modal__input" placeholder="Ваше имя *" required>
+                    <input type="tel" name="phone" class="modal__input" placeholder="Телефон *" required>
+                    <input type="hidden" name="house" id="calc-house">
+                    <input type="hidden" name="package" id="calc-package">
+                    <input type="text" name="website" class="modal__honeypot" tabindex="-1" autocomplete="off">
+                    <button type="submit" class="btn btn--orange btn--lg modal__btn">Получить расчёт</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
