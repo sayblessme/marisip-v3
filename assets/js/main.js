@@ -10,8 +10,8 @@
     //                    TELEGRAM CONFIGURATION
     // ═══════════════════════════════════════════════════════════════
 
-    const TG_BOT_TOKEN = 'ВСТАВИТЬ_СЮДА_ТОКЕН_БОТА';
-    const TG_CHAT_ID = 'ВСТАВИТЬ_СЮДА_CHAT_ID';
+    const TG_BOT_TOKEN = '8359633092:AAERDGHnIBIIfA-zogg571H6s1gXUkja4jA';
+    const TG_CHAT_ID = '-5074792753';
 
     // ═══════════════════════════════════════════════════════════════
     //                         UTILITIES
