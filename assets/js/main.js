@@ -857,11 +857,21 @@ ${data.package ? `<b>Комплектация:</b> ${escapeHtml(data.package)}` 
     // ═══════════════════════════════════════════════════════════════
 
     function init() {
-        // Scroll to top on page load (prevent browser scroll restoration)
+        // Prevent browser scroll restoration (desktop fix)
         if ('scrollRestoration' in history) {
             history.scrollRestoration = 'manual';
         }
-        window.scrollTo(0, 0);
+
+        // Only scroll to top if no hash in URL
+        if (!window.location.hash) {
+            requestAnimationFrame(() => {
+                window.scrollTo(0, 0);
+            });
+        }
+
+        // Reset any stuck overflow states
+        document.body.style.overflow = '';
+        document.body.classList.remove('menu-open');
 
         initMobileMenu();
         initSmoothScroll();
