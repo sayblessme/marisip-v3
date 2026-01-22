@@ -1916,11 +1916,13 @@ body.menu-open::before {
 .quiz__contact-methods {
     display: flex;
     gap: 1rem;
+    align-items: stretch;
 }
 
 .quiz__contact-method {
     flex: 1;
     cursor: pointer;
+    display: flex;
 }
 
 .quiz__contact-method input {
@@ -1928,7 +1930,10 @@ body.menu-open::before {
 }
 
 .quiz__contact-method span {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     padding: 0.75rem;
     background: var(--bg-light);
     border: 2px solid transparent;
