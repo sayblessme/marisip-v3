@@ -1998,11 +1998,27 @@ body.menu-open::before {
 .quiz__btn--prev {
     color: var(--text-muted);
     border-color: var(--bg);
+    flex-shrink: 0;
 }
 
 .quiz__btn--next,
 .quiz__btn--submit {
     margin-left: auto;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 480px) {
+    .quiz__nav {
+        flex-wrap: wrap;
+    }
+    .quiz__btn--next,
+    .quiz__btn--submit {
+        flex: 1;
+        min-width: 0;
+    }
 }
 
 /* ═══════════════════════════════════════════════════════════════
