@@ -251,6 +251,44 @@ ${data.package ? `<b>Комплектация:</b> ${escapeHtml(data.package)}` 
     //                          MODALS
     // ═══════════════════════════════════════════════════════════════
 
+    // House data for popup
+    const housesData = {
+        'classic-mini': {
+            title: 'CLASSIC MINI',
+            area: '36 м²',
+            price: 'от 1,35 млн ₽',
+            image: 'assets/img/quiz/quiz-classic-mini.webp',
+            features: ['1 спальня', 'кухня-гостиная', 'санузел', 'терраса'],
+            description: 'Компактный одноэтажный дом — идеальное решение для дачи или небольшой семьи. Уютная планировка, быстрое строительство.'
+        },
+        'classic-comfort': {
+            title: 'CLASSIC COMFORT',
+            area: '48 м²',
+            price: 'от 1,6 млн ₽',
+            image: 'assets/img/quiz/quiz-comfort.webp',
+            features: ['2 комнаты', 'кухня-гостиная', 'котельная', 'санузел'],
+            description: 'Оптимальный вариант для постоянного проживания. Просторная планировка с раздельными комнатами и удобной кухней-гостиной.'
+        },
+        'classic-family': {
+            title: 'CLASSIC FAMILY',
+            area: '72 м²',
+            price: 'от 2,27 млн ₽',
+            image: 'assets/img/quiz/quiz-family.webp',
+            features: ['3 спальни', 'большая кухня-гостиная', '2 санузла', 'терраса'],
+            description: 'Просторный семейный дом с тремя спальнями. Идеально подходит для семьи с детьми. Продуманная планировка и много места для хранения.'
+        },
+        'classic-max': {
+            title: 'CLASSIC MAX',
+            area: '96 м²',
+            price: 'от 2,75 млн ₽',
+            image: 'assets/img/quiz/quiz-max.webp',
+            features: ['4 комнаты', '2 санузла', 'гардеробная', 'терраса'],
+            description: 'Максимальный комфорт для большой семьи. Четыре полноценных комнаты, два санузла и просторная кухня-гостиная.'
+        }
+    };
+
+    let currentHouse = null;
+
     function initModals() {
         const modals = document.querySelectorAll('.modal');
 
@@ -271,6 +309,23 @@ ${data.package ? `<b>Комплектация:</b> ${escapeHtml(data.package)}` 
                 if (data.package) {
                     subtitle.textContent = `Расчёт комплектации "${data.package}"`;
                     if (packageInput) packageInput.value = data.package;
+                }
+            }
+
+            // House modal
+            if (modalId === 'house' && data.house) {
+                const houseData = housesData[data.house];
+                if (houseData) {
+                    currentHouse = houseData.title;
+                    document.getElementById('house-modal-img').src = houseData.image;
+                    document.getElementById('house-modal-img').alt = houseData.title;
+                    document.getElementById('house-modal-title').textContent = houseData.title;
+                    document.getElementById('house-modal-area').textContent = houseData.area;
+                    document.getElementById('house-modal-price').textContent = houseData.price;
+                    document.getElementById('house-modal-desc').textContent = houseData.description;
+
+                    const featuresEl = document.getElementById('house-modal-features');
+                    featuresEl.innerHTML = houseData.features.map(f => `<li>${f}</li>`).join('');
                 }
             }
 
@@ -300,6 +355,18 @@ ${data.package ? `<b>Комплектация:</b> ${escapeHtml(data.package)}` 
                 openModal(modalId, data);
             });
         });
+
+        // House modal calc button
+        const houseCalcBtn = document.getElementById('house-modal-calc');
+        if (houseCalcBtn) {
+            houseCalcBtn.addEventListener('click', () => {
+                const houseModal = document.getElementById('modal-house');
+                if (houseModal) {
+                    closeModal(houseModal);
+                }
+                scrollToElement('#quiz');
+            });
+        }
 
         // Close buttons and overlays
         modals.forEach(modal => {
@@ -520,16 +587,9 @@ ${data.package ? `<b>Комплектация:</b> ${escapeHtml(data.package)}` 
                 }
             }
 
-            // For step 7 (contacts), validate form
+            // For step 7 (contacts), validate form - only phone is required
             if (stepNum === totalSteps) {
-                const nameInput = document.getElementById('quiz-name');
                 const phoneInput = document.getElementById('quiz-phone');
-
-                if (!nameInput?.value.trim()) {
-                    alert('Пожалуйста, введите имя');
-                    nameInput?.focus();
-                    return false;
-                }
 
                 if (!isValidPhone(phoneInput?.value || '')) {
                     alert('Пожалуйста, введите корректный номер телефона');
@@ -619,6 +679,26 @@ ${data.package ? `<b>Комплектация:</b> ${escapeHtml(data.package)}` 
                 alert('Произошла ошибка. Пожалуйста, позвоните нам: 8 (999) 609-26-66');
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalText;
+            }
+        });
+
+        // Auto-advance on option select (for steps 1-6)
+        steps.forEach(stepEl => {
+            const stepNum = parseInt(stepEl.dataset.step);
+            if (stepNum < totalSteps) {
+                const radioInputs = stepEl.querySelectorAll('input[type="radio"]');
+                radioInputs.forEach(radio => {
+                    radio.addEventListener('change', () => {
+                        // Small delay for visual feedback
+                        setTimeout(() => {
+                            collectStepAnswer(currentStep);
+                            if (currentStep < totalSteps) {
+                                currentStep++;
+                                showStep(currentStep);
+                            }
+                        }, 300);
+                    });
+                });
             }
         });
 
