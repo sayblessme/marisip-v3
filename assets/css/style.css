@@ -1618,8 +1618,11 @@ body.menu-open::before {
     position: relative;
     border-radius: var(--radius-lg);
     overflow: hidden;
-    cursor: pointer;
     aspect-ratio: 4/3;
+}
+
+.portfolio__item[data-gallery] {
+    cursor: pointer;
 }
 
 .portfolio__item img {
@@ -1629,7 +1632,7 @@ body.menu-open::before {
     transition: transform var(--transition-slow);
 }
 
-.portfolio__item:hover img {
+.portfolio__item[data-gallery]:hover img {
     transform: scale(1.05);
 }
 
@@ -1694,17 +1697,26 @@ body.menu-open::before {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background: none;
+    background: var(--white);
     border: none;
-    color: var(--text-muted);
+    color: var(--text);
     cursor: pointer;
     padding: 0.5rem;
     z-index: 10;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: background var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.gallery-modal__close:hover {
+    background: var(--bg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .gallery-modal__close svg {
     width: 28px;
     height: 28px;
+    display: block;
 }
 
 .gallery-modal__scroll {
