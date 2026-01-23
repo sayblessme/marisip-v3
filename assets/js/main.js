@@ -287,7 +287,62 @@ ${data.package ? `<b>Комплектация:</b> ${escapeHtml(data.package)}` 
         }
     };
 
+    // Package data for popup
+    const packagesData = {
+        'basic': {
+            title: 'Тёплый контур',
+            badge: 'Базовая',
+            badgeClass: 'basic',
+            description: 'Идеальный вариант для тех, кто хочет самостоятельно заняться внутренней отделкой. Вы получаете полностью готовый каркас дома с кровлей, окнами и входной дверью.',
+            features: [
+                'Фундамент на винтовых сваях с обвязкой',
+                'Каркас из SIP-панелей (стены, перекрытия)',
+                'Кровля с металлочерепицей или профнастилом',
+                'Пластиковые окна с двухкамерным стеклопакетом',
+                'Металлическая входная дверь',
+                'Водосточная система',
+                'Наружная отделка фасада (имитация бруса или сайдинг)'
+            ],
+            quizPackage: 'Тёплый контур'
+        },
+        'comfort': {
+            title: 'Комфорт',
+            badge: 'Популярная',
+            badgeClass: 'comfort',
+            description: 'Самый популярный вариант! Дом готов к чистовой отделке. Все коммуникации разведены, электрика смонтирована — остаётся только выбрать обои и мебель.',
+            features: [
+                'Всё из комплектации «Тёплый контур»',
+                'Электропроводка с розетками и выключателями',
+                'Электрощиток с автоматами',
+                'Разводка водопровода (холодная и горячая вода)',
+                'Канализация с выводом',
+                'Черновая стяжка пола',
+                'Утепление и пароизоляция',
+                'Межкомнатные перегородки'
+            ],
+            quizPackage: 'Комфорт'
+        },
+        'turnkey': {
+            title: 'Под ключ',
+            badge: 'Максимум',
+            badgeClass: 'turnkey',
+            description: 'Полностью готовый дом — заезжай и живи! Чистовая отделка, установленная сантехника, освещение. Осталось только завезти мебель.',
+            features: [
+                'Всё из комплектации «Комфорт»',
+                'Чистовая отделка стен (обои/покраска)',
+                'Напольное покрытие (ламинат/линолеум)',
+                'Натяжные или подвесные потолки',
+                'Межкомнатные двери',
+                'Полный комплект сантехники (унитаз, раковина, ванна/душ)',
+                'Освещение во всех комнатах',
+                'Установка водонагревателя'
+            ],
+            quizPackage: 'Под ключ'
+        }
+    };
+
     let currentHouse = null;
+    let currentPackage = null;
 
     function initModals() {
         const modals = document.querySelectorAll('.modal');
@@ -329,6 +384,22 @@ ${data.package ? `<b>Комплектация:</b> ${escapeHtml(data.package)}` 
                 }
             }
 
+            // Package modal
+            if (modalId === 'package' && data.package) {
+                const packageData = packagesData[data.package];
+                if (packageData) {
+                    currentPackage = packageData.quizPackage;
+                    const header = document.getElementById('package-modal-header');
+                    header.className = `package-modal__header package-modal__header--${packageData.badgeClass}`;
+                    document.getElementById('package-modal-title').textContent = packageData.title;
+                    document.getElementById('package-modal-badge').textContent = packageData.badge;
+                    document.getElementById('package-modal-desc').textContent = packageData.description;
+
+                    const listEl = document.getElementById('package-modal-list');
+                    listEl.innerHTML = packageData.features.map(f => `<li>${f}</li>`).join('');
+                }
+            }
+
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
 
@@ -363,6 +434,18 @@ ${data.package ? `<b>Комплектация:</b> ${escapeHtml(data.package)}` 
                 const houseModal = document.getElementById('modal-house');
                 if (houseModal) {
                     closeModal(houseModal);
+                }
+                scrollToElement('#quiz');
+            });
+        }
+
+        // Package modal calc button
+        const packageCalcBtn = document.getElementById('package-modal-calc');
+        if (packageCalcBtn) {
+            packageCalcBtn.addEventListener('click', () => {
+                const packageModal = document.getElementById('modal-package');
+                if (packageModal) {
+                    closeModal(packageModal);
                 }
                 scrollToElement('#quiz');
             });

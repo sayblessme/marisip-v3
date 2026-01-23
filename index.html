@@ -23,7 +23,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="assets/css/style.css?v=10">
+    <link rel="stylesheet" href="assets/css/style.css?v=11">
 </head>
 <body>
     <!-- ═══════════════════════════════════════════════════════════════
@@ -983,7 +983,10 @@
                             Окна и входная дверь
                         </li>
                     </ul>
-                    <button class="btn btn--green package-card__btn" data-scroll="quiz" data-package="Тёплый контур">Рассчитать</button>
+                    <div class="package-card__actions">
+                        <button class="btn btn--outline-white package-card__btn-details" data-modal="package" data-package="basic">Подробнее</button>
+                        <button class="btn btn--green package-card__btn" data-scroll="quiz" data-package="Тёплый контур">Рассчитать</button>
+                    </div>
                 </div>
 
                 <div class="package-card package-card--popular">
@@ -1009,7 +1012,10 @@
                             Черновая отделка
                         </li>
                     </ul>
-                    <button class="btn btn--orange package-card__btn" data-scroll="quiz" data-package="Комфорт">Рассчитать</button>
+                    <div class="package-card__actions">
+                        <button class="btn btn--outline-white package-card__btn-details" data-modal="package" data-package="comfort">Подробнее</button>
+                        <button class="btn btn--orange package-card__btn" data-scroll="quiz" data-package="Комфорт">Рассчитать</button>
+                    </div>
                 </div>
 
                 <div class="package-card">
@@ -1035,7 +1041,10 @@
                             Заезжай и живи!
                         </li>
                     </ul>
-                    <button class="btn btn--green package-card__btn" data-scroll="quiz" data-package="Под ключ">Рассчитать</button>
+                    <div class="package-card__actions">
+                        <button class="btn btn--outline-white package-card__btn-details" data-modal="package" data-package="turnkey">Подробнее</button>
+                        <button class="btn btn--green package-card__btn" data-scroll="quiz" data-package="Под ключ">Рассчитать</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1458,7 +1467,33 @@
         </div>
     </div>
 
+    <!-- Package Modal -->
+    <div class="modal modal--package" id="modal-package">
+        <div class="modal__overlay"></div>
+        <div class="modal__container modal__container--package">
+            <button class="modal__close" aria-label="Закрыть">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </button>
+            <div class="modal__content">
+                <div class="package-modal">
+                    <div class="package-modal__header" id="package-modal-header">
+                        <h3 class="package-modal__title" id="package-modal-title"></h3>
+                        <span class="package-modal__badge" id="package-modal-badge"></span>
+                    </div>
+                    <div class="package-modal__body">
+                        <p class="package-modal__desc" id="package-modal-desc"></p>
+                        <h4 class="package-modal__subtitle">Что входит:</h4>
+                        <ul class="package-modal__list" id="package-modal-list"></ul>
+                    </div>
+                    <div class="package-modal__actions">
+                        <button class="btn btn--orange btn--lg" id="package-modal-calc">Рассчитать стоимость</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
-    <script src="assets/js/main.js?v=2"></script>
+    <script src="assets/js/main.js?v=3"></script>
 </body>
 </html>
