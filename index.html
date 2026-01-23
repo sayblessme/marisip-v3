@@ -984,7 +984,7 @@
                         </li>
                     </ul>
                     <div class="package-card__actions">
-                        <button class="btn btn--outline-white package-card__btn-details" data-modal="package" data-package="basic">Подробнее</button>
+                        <button class="btn btn--outline-green package-card__btn-details" data-modal="package" data-package="basic">Подробнее</button>
                         <button class="btn btn--green package-card__btn" data-scroll="quiz" data-package="Тёплый контур">Рассчитать</button>
                     </div>
                 </div>
@@ -1013,7 +1013,7 @@
                         </li>
                     </ul>
                     <div class="package-card__actions">
-                        <button class="btn btn--outline-white package-card__btn-details" data-modal="package" data-package="comfort">Подробнее</button>
+                        <button class="btn btn--outline-green package-card__btn-details" data-modal="package" data-package="comfort">Подробнее</button>
                         <button class="btn btn--orange package-card__btn" data-scroll="quiz" data-package="Комфорт">Рассчитать</button>
                     </div>
                 </div>
@@ -1042,7 +1042,7 @@
                         </li>
                     </ul>
                     <div class="package-card__actions">
-                        <button class="btn btn--outline-white package-card__btn-details" data-modal="package" data-package="turnkey">Подробнее</button>
+                        <button class="btn btn--outline-green package-card__btn-details" data-modal="package" data-package="turnkey">Подробнее</button>
                         <button class="btn btn--green package-card__btn" data-scroll="quiz" data-package="Под ключ">Рассчитать</button>
                     </div>
                 </div>
@@ -1090,36 +1090,36 @@
             </h2>
 
             <div class="process__timeline">
-                <div class="process__step">
+                <div class="process__step" data-modal="process" data-step="1">
                     <div class="process__number">1</div>
                     <div class="process__content">
                         <h3 class="process__title">Консультация и расчёт</h3>
-                        <p class="process__text">Обсуждаем ваши пожелания, подбираем проект и рассчитываем стоимость</p>
                     </div>
+                    <svg class="process__arrow" viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
                 </div>
 
-                <div class="process__step">
+                <div class="process__step" data-modal="process" data-step="2">
                     <div class="process__number">2</div>
                     <div class="process__content">
                         <h3 class="process__title">Проект и договор</h3>
-                        <p class="process__text">Готовим проектную документацию, фиксируем цену и сроки в договоре</p>
                     </div>
+                    <svg class="process__arrow" viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
                 </div>
 
-                <div class="process__step">
+                <div class="process__step" data-modal="process" data-step="3">
                     <div class="process__number">3</div>
                     <div class="process__content">
                         <h3 class="process__title">Производство и монтаж</h3>
-                        <p class="process__text">Изготавливаем SIP-панели на своём производстве и строим дом на участке</p>
                     </div>
+                    <svg class="process__arrow" viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
                 </div>
 
-                <div class="process__step">
+                <div class="process__step" data-modal="process" data-step="4">
                     <div class="process__number">4</div>
                     <div class="process__content">
                         <h3 class="process__title">Сдача с гарантией</h3>
-                        <p class="process__text">Сдаём готовый дом с гарантией качества. Въезжайте и живите!</p>
                     </div>
+                    <svg class="process__arrow" viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
                 </div>
             </div>
         </div>
@@ -1487,6 +1487,27 @@
                     </div>
                     <div class="package-modal__actions">
                         <button class="btn btn--orange btn--lg" id="package-modal-calc">Рассчитать стоимость</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Process Modal -->
+    <div class="modal modal--process" id="modal-process">
+        <div class="modal__overlay"></div>
+        <div class="modal__container modal__container--process">
+            <button class="modal__close" aria-label="Закрыть">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </button>
+            <div class="modal__content">
+                <div class="process-modal">
+                    <div class="process-modal__header">
+                        <div class="process-modal__number" id="process-modal-number"></div>
+                        <h3 class="process-modal__title" id="process-modal-title"></h3>
+                    </div>
+                    <div class="process-modal__body">
+                        <p class="process-modal__text" id="process-modal-text"></p>
                     </div>
                 </div>
             </div>

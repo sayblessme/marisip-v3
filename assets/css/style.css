@@ -1542,8 +1542,7 @@ body.menu-open::before {
 }
 
 .package-card__list {
-    padding: 1.5rem;
-    flex: 1;
+    display: none;
 }
 
 .package-card__item {
@@ -1570,7 +1569,7 @@ body.menu-open::before {
 .package-card__actions {
     display: flex;
     gap: 0.5rem;
-    padding: 0 1.5rem 1.5rem;
+    padding: 1.5rem 1.5rem 1.5rem;
     margin-top: auto;
 }
 
@@ -1679,17 +1678,24 @@ body.menu-open::before {
 
 .process__step {
     display: flex;
+    align-items: center;
     gap: 1rem;
     background: var(--card);
-    padding: 1.5rem;
+    padding: 1.25rem 1.5rem;
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-md);
     transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    cursor: pointer;
 }
 
 .process__step:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
+}
+
+.process__step:hover .process__arrow {
+    transform: translateX(4px);
+    color: var(--green);
 }
 
 .process__number {
@@ -1717,13 +1723,16 @@ body.menu-open::before {
     font-size: 1.125rem;
     font-weight: 600;
     color: var(--text);
-    margin-bottom: 0.5rem;
+    margin: 0;
 }
 
-.process__text {
-    font-size: 0.9rem;
-    color: var(--text-light);
-    line-height: 1.5;
+.process__arrow {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    color: var(--text-muted);
+    transition: transform var(--transition-fast), color var(--transition-fast);
+    margin-left: auto;
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -2115,7 +2124,7 @@ body.menu-open::before {
                          ABOUT SECTION
    ═══════════════════════════════════════════════════════════════ */
 .about {
-    padding: 4rem 0;
+    padding: 2rem 0 4rem;
     background: var(--bg-light);
 }
 
@@ -2304,7 +2313,8 @@ body.menu-open::before {
 }
 
 .reviews__cta {
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -2909,7 +2919,7 @@ body.menu-open::before {
 }
 
 .package-modal__header--basic {
-    background: linear-gradient(135deg, #607d8b 0%, #455a64 100%);
+    background: linear-gradient(135deg, var(--green-light) 0%, var(--green) 100%);
 }
 
 .package-modal__header--comfort {
@@ -2917,7 +2927,7 @@ body.menu-open::before {
 }
 
 .package-modal__header--turnkey {
-    background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+    background: linear-gradient(135deg, #7c4dff 0%, #651fff 100%);
 }
 
 .package-modal__title {
@@ -2994,15 +3004,77 @@ body.menu-open::before {
 /* Package Modal Close Button */
 .modal--package .modal__close {
     z-index: 10;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .modal--package .modal__close:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: var(--white);
 }
 
 .modal--package .modal__close svg {
-    fill: var(--white);
+    fill: var(--text);
+}
+
+/* Process Modal */
+.modal__container--process {
+    max-width: 450px;
+}
+
+.process-modal__header {
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: linear-gradient(135deg, var(--green-light) 0%, var(--green) 100%);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.process-modal__number {
+    width: 48px;
+    height: 48px;
+    background: var(--white);
+    color: var(--green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.process-modal__title {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.process-modal__body {
+    padding: 1.5rem;
+}
+
+.process-modal__text {
+    font-size: 1rem;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* Process Modal Close Button */
+.modal--process .modal__close {
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal--process .modal__close:hover {
+    background: var(--white);
+}
+
+.modal--process .modal__close svg {
+    fill: var(--text);
 }
 
 /* ═══════════════════════════════════════════════════════════════
