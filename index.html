@@ -23,7 +23,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=10">
 </head>
 <body>
     <!-- ═══════════════════════════════════════════════════════════════
@@ -144,7 +144,7 @@
         <!-- MOBILE: Green torn paper text -->
         <div class="hero__tape-wrapper">
             <div class="hero__tape">
-                <p class="hero__tape-text">Ответьте на <strong>7 вопросов</strong><br>и узнайте точный расчёт!</p>
+                <p class="hero__tape-text">Ответьте на <strong>7 вопросов</strong><br>и получите каталог домов</p>
             </div>
         </div>
 
@@ -427,11 +427,7 @@
     ═══════════════════════════════════════════════════════════════ -->
     <section class="advantages" id="advantages">
         <div class="container">
-            <h2 class="section-title">
-                <span class="section-title__accent">SIP-дома под ключ</span>
-                от 1,35 млн ₽
-            </h2>
-            <p class="section-subtitle">Строим тёплые, энергоэффективные дома за 30–60 дней по типовым и индивидуальным проектам</p>
+            <h2 class="section-title">Почему выбирают нас</h2>
 
             <div class="advantages__grid">
                 <div class="advantage-card">
@@ -444,7 +440,6 @@
                         </svg>
                     </div>
                     <h3 class="advantage-card__title">Собственное производство</h3>
-                    <p class="advantage-card__text">SIP-панели собственного производства — контроль качества на каждом этапе</p>
                 </div>
 
                 <div class="advantage-card">
@@ -456,7 +451,6 @@
                         </svg>
                     </div>
                     <h3 class="advantage-card__title">Срок от 30 дней</h3>
-                    <p class="advantage-card__text">Быстрое строительство без потери качества — въезжайте в новый дом уже через месяц</p>
                 </div>
 
                 <div class="advantage-card">
@@ -467,7 +461,6 @@
                         </svg>
                     </div>
                     <h3 class="advantage-card__title">Фиксированная цена</h3>
-                    <p class="advantage-card__text">Стоимость фиксируется в договоре — никаких скрытых платежей и доплат</p>
                 </div>
 
                 <div class="advantage-card">
@@ -481,7 +474,6 @@
                         </svg>
                     </div>
                     <h3 class="advantage-card__title">Ипотека и маткапитал</h3>
-                    <p class="advantage-card__text">Работаем с банками — поможем оформить ипотеку или использовать материнский капитал</p>
                 </div>
             </div>
         </div>
@@ -496,99 +488,115 @@
                 Каталог <span class="section-title__accent">домов</span>
             </h2>
 
-            <div class="catalog__grid">
-                <!-- House 1 -->
-                <article class="house-card">
-                    <div class="house-card__image">
-                        <img src="assets/img/quiz/quiz-classic-mini.webp" alt="CLASSIC MINI — 36 м²" loading="lazy">
-                        <span class="house-card__badge house-card__badge--hit">Хит продаж</span>
-                    </div>
-                    <div class="house-card__body">
-                        <h3 class="house-card__title">CLASSIC MINI</h3>
-                        <div class="house-card__info">
-                            <span class="house-card__area">36 м²</span>
-                            <span class="house-card__price">от 1,35 млн ₽</span>
+            <div class="catalog__slider">
+                <div class="catalog__track">
+                    <!-- House 1 -->
+                    <article class="house-card">
+                        <div class="house-card__image">
+                            <img src="assets/img/quiz/quiz-classic-mini.webp" alt="MINI — 36 м²" loading="lazy">
+                            <span class="house-card__badge house-card__badge--hit">Хит продаж</span>
                         </div>
-                        <ul class="house-card__features">
-                            <li>1 спальня</li>
-                            <li>кухня-гостиная</li>
-                            <li>санузел</li>
-                        </ul>
-                        <div class="house-card__actions">
-                            <button class="btn btn--outline-green btn--sm" data-modal="house" data-house="classic-mini">Подробнее</button>
-                            <button class="btn btn--orange btn--sm" data-scroll="quiz" data-house="CLASSIC MINI">Рассчитать</button>
+                        <div class="house-card__body">
+                            <h3 class="house-card__title">MINI</h3>
+                            <div class="house-card__info">
+                                <span class="house-card__area">36 м²</span>
+                                <span class="house-card__price">от 1,35 млн ₽</span>
+                            </div>
+                            <ul class="house-card__features">
+                                <li>1 спальня</li>
+                                <li>кухня-гостиная</li>
+                                <li>санузел</li>
+                            </ul>
+                            <div class="house-card__actions">
+                                <button class="btn btn--outline-green btn--sm" data-modal="house" data-house="classic-mini">Подробнее</button>
+                                <button class="btn btn--orange btn--sm" data-scroll="quiz" data-house="MINI">Рассчитать</button>
+                            </div>
                         </div>
-                    </div>
-                </article>
+                    </article>
 
-                <!-- House 2 -->
-                <article class="house-card">
-                    <div class="house-card__image">
-                        <img src="assets/img/quiz/quiz-comfort.webp" alt="CLASSIC COMFORT — 48 м²" loading="lazy">
-                    </div>
-                    <div class="house-card__body">
-                        <h3 class="house-card__title">CLASSIC COMFORT</h3>
-                        <div class="house-card__info">
-                            <span class="house-card__area">48 м²</span>
-                            <span class="house-card__price">от 1,6 млн ₽</span>
+                    <!-- House 2 -->
+                    <article class="house-card">
+                        <div class="house-card__image">
+                            <img src="assets/img/quiz/quiz-comfort.webp" alt="COMFORT — 48 м²" loading="lazy">
                         </div>
-                        <ul class="house-card__features">
-                            <li>2 комнаты</li>
-                            <li>кухня-гостиная</li>
-                            <li>котельная</li>
-                        </ul>
-                        <div class="house-card__actions">
-                            <button class="btn btn--outline-green btn--sm" data-modal="house" data-house="classic-comfort">Подробнее</button>
-                            <button class="btn btn--orange btn--sm" data-scroll="quiz" data-house="CLASSIC COMFORT">Рассчитать</button>
+                        <div class="house-card__body">
+                            <h3 class="house-card__title">COMFORT</h3>
+                            <div class="house-card__info">
+                                <span class="house-card__area">48 м²</span>
+                                <span class="house-card__price">от 1,6 млн ₽</span>
+                            </div>
+                            <ul class="house-card__features">
+                                <li>2 комнаты</li>
+                                <li>кухня-гостиная</li>
+                                <li>котельная</li>
+                            </ul>
+                            <div class="house-card__actions">
+                                <button class="btn btn--outline-green btn--sm" data-modal="house" data-house="classic-comfort">Подробнее</button>
+                                <button class="btn btn--orange btn--sm" data-scroll="quiz" data-house="COMFORT">Рассчитать</button>
+                            </div>
                         </div>
-                    </div>
-                </article>
+                    </article>
 
-                <!-- House 3 -->
-                <article class="house-card">
-                    <div class="house-card__image">
-                        <img src="assets/img/quiz/quiz-family.webp" alt="CLASSIC FAMILY — 72 м²" loading="lazy">
-                        <span class="house-card__badge house-card__badge--family">Для семьи</span>
-                    </div>
-                    <div class="house-card__body">
-                        <h3 class="house-card__title">CLASSIC FAMILY</h3>
-                        <div class="house-card__info">
-                            <span class="house-card__area">72 м²</span>
-                            <span class="house-card__price">от 2,27 млн ₽</span>
+                    <!-- House 3 -->
+                    <article class="house-card">
+                        <div class="house-card__image">
+                            <img src="assets/img/quiz/quiz-family.webp" alt="FAMILY — 72 м²" loading="lazy">
+                            <span class="house-card__badge house-card__badge--family">Для семьи</span>
                         </div>
-                        <ul class="house-card__features">
-                            <li>3 спальни</li>
-                            <li>большая кухня-гостиная</li>
-                        </ul>
-                        <div class="house-card__actions">
-                            <button class="btn btn--outline-green btn--sm" data-modal="house" data-house="classic-family">Подробнее</button>
-                            <button class="btn btn--orange btn--sm" data-scroll="quiz" data-house="CLASSIC FAMILY">Рассчитать</button>
+                        <div class="house-card__body">
+                            <h3 class="house-card__title">FAMILY</h3>
+                            <div class="house-card__info">
+                                <span class="house-card__area">72 м²</span>
+                                <span class="house-card__price">от 2,27 млн ₽</span>
+                            </div>
+                            <ul class="house-card__features">
+                                <li>3 спальни</li>
+                                <li>большая кухня-гостиная</li>
+                            </ul>
+                            <div class="house-card__actions">
+                                <button class="btn btn--outline-green btn--sm" data-modal="house" data-house="classic-family">Подробнее</button>
+                                <button class="btn btn--orange btn--sm" data-scroll="quiz" data-house="FAMILY">Рассчитать</button>
+                            </div>
                         </div>
-                    </div>
-                </article>
+                    </article>
 
-                <!-- House 4 -->
-                <article class="house-card">
-                    <div class="house-card__image">
-                        <img src="assets/img/quiz/quiz-max.webp" alt="CLASSIC MAX — 96 м²" loading="lazy">
-                        <span class="house-card__badge house-card__badge--max">Максимум</span>
-                    </div>
-                    <div class="house-card__body">
-                        <h3 class="house-card__title">CLASSIC MAX</h3>
-                        <div class="house-card__info">
-                            <span class="house-card__area">96 м²</span>
-                            <span class="house-card__price">от 2,75 млн ₽</span>
+                    <!-- House 4 -->
+                    <article class="house-card">
+                        <div class="house-card__image">
+                            <img src="assets/img/quiz/quiz-max.webp" alt="MAX — 96 м²" loading="lazy">
+                            <span class="house-card__badge house-card__badge--max">Максимум</span>
                         </div>
-                        <ul class="house-card__features">
-                            <li>4 комнаты</li>
-                            <li>2 санузла</li>
-                        </ul>
-                        <div class="house-card__actions">
-                            <button class="btn btn--outline-green btn--sm" data-modal="house" data-house="classic-max">Подробнее</button>
-                            <button class="btn btn--orange btn--sm" data-scroll="quiz" data-house="CLASSIC MAX">Рассчитать</button>
+                        <div class="house-card__body">
+                            <h3 class="house-card__title">MAX</h3>
+                            <div class="house-card__info">
+                                <span class="house-card__area">96 м²</span>
+                                <span class="house-card__price">от 2,75 млн ₽</span>
+                            </div>
+                            <ul class="house-card__features">
+                                <li>4 комнаты</li>
+                                <li>2 санузла</li>
+                            </ul>
+                            <div class="house-card__actions">
+                                <button class="btn btn--outline-green btn--sm" data-modal="house" data-house="classic-max">Подробнее</button>
+                                <button class="btn btn--orange btn--sm" data-scroll="quiz" data-house="MAX">Рассчитать</button>
+                            </div>
                         </div>
-                    </div>
-                </article>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Catalog Navigation -->
+            <div class="catalog__nav">
+                <button class="catalog__arrow catalog__arrow--prev" aria-label="Предыдущий">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </button>
+                <button class="catalog__arrow catalog__arrow--next" aria-label="Следующий">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                </button>
             </div>
         </div>
     </section>
@@ -633,34 +641,34 @@
                         <h3 class="quiz__question">Какой дом вы рассматриваете?</h3>
                         <div class="quiz__options quiz__options--grid">
                             <label class="quiz__option quiz__option--image">
-                                <input type="radio" name="house" value="CLASSIC MINI — 36 м²">
+                                <input type="radio" name="house" value="MINI — 36 м²">
                                 <span class="quiz__option-inner">
-                                    <img src="assets/img/quiz/quiz-classic-mini.webp" alt="CLASSIC MINI" class="quiz__option-img">
-                                    <span class="quiz__option-text">CLASSIC MINI</span>
+                                    <img src="assets/img/quiz/quiz-classic-mini.webp" alt="MINI" class="quiz__option-img">
+                                    <span class="quiz__option-text">MINI</span>
                                     <span class="quiz__option-sub">36 м²</span>
                                 </span>
                             </label>
                             <label class="quiz__option quiz__option--image">
-                                <input type="radio" name="house" value="CLASSIC COMFORT — 48 м²">
+                                <input type="radio" name="house" value="COMFORT — 48 м²">
                                 <span class="quiz__option-inner">
-                                    <img src="assets/img/quiz/quiz-comfort.webp" alt="CLASSIC COMFORT" class="quiz__option-img">
-                                    <span class="quiz__option-text">CLASSIC COMFORT</span>
+                                    <img src="assets/img/quiz/quiz-comfort.webp" alt="COMFORT" class="quiz__option-img">
+                                    <span class="quiz__option-text">COMFORT</span>
                                     <span class="quiz__option-sub">48 м²</span>
                                 </span>
                             </label>
                             <label class="quiz__option quiz__option--image">
-                                <input type="radio" name="house" value="CLASSIC FAMILY — 72 м²">
+                                <input type="radio" name="house" value="FAMILY — 72 м²">
                                 <span class="quiz__option-inner">
-                                    <img src="assets/img/quiz/quiz-family.webp" alt="CLASSIC FAMILY" class="quiz__option-img">
-                                    <span class="quiz__option-text">CLASSIC FAMILY</span>
+                                    <img src="assets/img/quiz/quiz-family.webp" alt="FAMILY" class="quiz__option-img">
+                                    <span class="quiz__option-text">FAMILY</span>
                                     <span class="quiz__option-sub">72 м²</span>
                                 </span>
                             </label>
                             <label class="quiz__option quiz__option--image">
-                                <input type="radio" name="house" value="CLASSIC MAX — 96 м²">
+                                <input type="radio" name="house" value="MAX — 96 м²">
                                 <span class="quiz__option-inner">
-                                    <img src="assets/img/quiz/quiz-max.webp" alt="CLASSIC MAX" class="quiz__option-img">
-                                    <span class="quiz__option-text">CLASSIC MAX</span>
+                                    <img src="assets/img/quiz/quiz-max.webp" alt="MAX" class="quiz__option-img">
+                                    <span class="quiz__option-text">MAX</span>
                                     <span class="quiz__option-sub">96 м²</span>
                                 </span>
                             </label>
@@ -1152,7 +1160,7 @@
                                 <span>★★★★★</span>
                             </div>
                         </div>
-                        <p class="review-card__text">Построили дом CLASSIC COMFORT за 45 дней. Качество отличное, все сроки соблюдены. Отдельное спасибо за помощь с ипотекой!</p>
+                        <p class="review-card__text">Построили дом COMFORT за 45 дней. Качество отличное, все сроки соблюдены. Отдельное спасибо за помощь с ипотекой!</p>
                     </div>
 
                     <div class="review-card">
@@ -1180,7 +1188,7 @@
                                 <span>★★★★★</span>
                             </div>
                         </div>
-                        <p class="review-card__text">Заказывал CLASSIC FAMILY для семьи. Три спальни, просторная гостиная — всё как хотели. Цена не изменилась с момента подписания договора.</p>
+                        <p class="review-card__text">Заказывал FAMILY для семьи. Три спальни, просторная гостиная — всё как хотели. Цена не изменилась с момента подписания договора.</p>
                     </div>
 
                     <div class="review-card">
@@ -1222,7 +1230,7 @@
                                 <span>★★★★★</span>
                             </div>
                         </div>
-                        <p class="review-card__text">CLASSIC MINI идеально подошёл для нашей дачи. Компактный, но очень уютный. Строили по сельской ипотеке под 3%.</p>
+                        <p class="review-card__text">MINI идеально подошёл для нашей дачи. Компактный, но очень уютный. Строили по сельской ипотеке под 3%.</p>
                     </div>
                 </div>
 
@@ -1451,6 +1459,6 @@
     </div>
 
     <!-- Scripts -->
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js?v=2"></script>
 </body>
 </html>

@@ -800,7 +800,7 @@ body.menu-open::before {
 .hero__top {
     background: linear-gradient(135deg, #e07f23 0%, #d9791f 30%, #c46d15 70%, #b5620f 100%);
     position: relative;
-    padding: 1rem 1rem 0;
+    padding: 1rem 1rem 0.5rem;
     text-align: center;
 }
 
@@ -1250,24 +1250,95 @@ body.menu-open::before {
 .catalog {
     padding: 4rem 0;
     background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 100%);
+    overflow: hidden;
 }
 
-.catalog__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+/* Catalog Slider */
+.catalog__slider {
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.catalog__slider::-webkit-scrollbar {
+    display: none;
+}
+
+.catalog__track {
+    display: flex;
+    gap: 1rem;
+    width: max-content;
+    padding-right: 1rem;
+}
+
+.catalog__track .house-card {
+    width: calc(75vw - 25px);
+    flex-shrink: 0;
+    scroll-snap-align: start;
 }
 
 @media (min-width: 640px) {
-    .catalog__grid {
-        grid-template-columns: repeat(2, 1fr);
+    .catalog__slider {
+        overflow: visible;
+        scroll-snap-type: none;
+    }
+
+    .catalog__track {
+        transition: transform var(--transition-slow);
+        touch-action: pan-y;
+        user-select: none;
+        -webkit-user-select: none;
+        cursor: grab;
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .catalog__track .house-card {
+        width: calc(50% - 0.5rem);
+        scroll-snap-align: none;
     }
 }
 
 @media (min-width: 1024px) {
-    .catalog__grid {
-        grid-template-columns: repeat(4, 1fr);
+    .catalog__track .house-card {
+        width: calc(33.333% - 0.667rem);
     }
+}
+
+/* Catalog Navigation */
+.catalog__nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.catalog__arrow {
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    color: var(--white);
+}
+
+.catalog__arrow:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.catalog__arrow svg {
+    width: 20px;
+    height: 20px;
 }
 
 /* House Card */
@@ -2719,6 +2790,21 @@ body.menu-open::before {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* House Modal Close Button - more visible on mobile */
+.modal--house .modal__close {
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal--house .modal__close:hover {
+    background: var(--white);
+}
+
+.modal--house .modal__close svg {
+    fill: var(--text);
 }
 
 .house-modal__info {

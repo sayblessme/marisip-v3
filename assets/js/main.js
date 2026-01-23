@@ -254,7 +254,7 @@ ${data.package ? `<b>Комплектация:</b> ${escapeHtml(data.package)}` 
     // House data for popup
     const housesData = {
         'classic-mini': {
-            title: 'CLASSIC MINI',
+            title: 'MINI',
             area: '36 м²',
             price: 'от 1,35 млн ₽',
             image: 'assets/img/quiz/quiz-classic-mini.webp',
@@ -262,7 +262,7 @@ ${data.package ? `<b>Комплектация:</b> ${escapeHtml(data.package)}` 
             description: 'Компактный одноэтажный дом — идеальное решение для дачи или небольшой семьи. Уютная планировка, быстрое строительство.'
         },
         'classic-comfort': {
-            title: 'CLASSIC COMFORT',
+            title: 'COMFORT',
             area: '48 м²',
             price: 'от 1,6 млн ₽',
             image: 'assets/img/quiz/quiz-comfort.webp',
@@ -270,7 +270,7 @@ ${data.package ? `<b>Комплектация:</b> ${escapeHtml(data.package)}` 
             description: 'Оптимальный вариант для постоянного проживания. Просторная планировка с раздельными комнатами и удобной кухней-гостиной.'
         },
         'classic-family': {
-            title: 'CLASSIC FAMILY',
+            title: 'FAMILY',
             area: '72 м²',
             price: 'от 2,27 млн ₽',
             image: 'assets/img/quiz/quiz-family.webp',
@@ -278,7 +278,7 @@ ${data.package ? `<b>Комплектация:</b> ${escapeHtml(data.package)}` 
             description: 'Просторный семейный дом с тремя спальнями. Идеально подходит для семьи с детьми. Продуманная планировка и много места для хранения.'
         },
         'classic-max': {
-            title: 'CLASSIC MAX',
+            title: 'MAX',
             area: '96 м²',
             price: 'от 2,75 млн ₽',
             image: 'assets/img/quiz/quiz-max.webp',
@@ -867,6 +867,125 @@ ${data.package ? `<b>Комплектация:</b> ${escapeHtml(data.package)}` 
     }
 
     // ═══════════════════════════════════════════════════════════════
+    //                      CATALOG SLIDER
+    // ═══════════════════════════════════════════════════════════════
+
+    function initCatalogSlider() {
+        const slider = document.querySelector('.catalog__slider');
+        if (!slider) return;
+
+        const track = slider.querySelector('.catalog__track');
+        const cards = track?.querySelectorAll('.house-card');
+        const prevBtn = document.querySelector('.catalog__arrow--prev');
+        const nextBtn = document.querySelector('.catalog__arrow--next');
+
+        if (!track || !cards || cards.length === 0) return;
+
+        let currentIndex = 0;
+
+        function isMobile() {
+            return window.innerWidth < 640;
+        }
+
+        function getCardsPerView() {
+            if (window.innerWidth >= 1024) return 3;
+            if (window.innerWidth >= 640) return 2;
+            return 1;
+        }
+
+        function getMaxIndex() {
+            return Math.max(0, cards.length - getCardsPerView());
+        }
+
+        // Desktop: transform-based slider
+        function updateSliderDesktop() {
+            if (isMobile()) return;
+            const cardWidth = cards[0].offsetWidth;
+            const gap = 16; // 1rem
+            const offset = currentIndex * (cardWidth + gap);
+            track.style.transform = `translateX(-${offset}px)`;
+        }
+
+        // Mobile: native scroll
+        function scrollToCard(index) {
+            if (!isMobile()) return;
+            const card = cards[index];
+            if (card) {
+                slider.scrollTo({
+                    left: card.offsetLeft,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        function goNext() {
+            const maxIndex = getMaxIndex();
+            if (currentIndex < maxIndex) {
+                currentIndex++;
+                if (isMobile()) {
+                    scrollToCard(currentIndex);
+                } else {
+                    updateSliderDesktop();
+                }
+            }
+        }
+
+        function goPrev() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                if (isMobile()) {
+                    scrollToCard(currentIndex);
+                } else {
+                    updateSliderDesktop();
+                }
+            }
+        }
+
+        prevBtn?.addEventListener('click', goPrev);
+        nextBtn?.addEventListener('click', goNext);
+
+        // Update on resize
+        window.addEventListener('resize', debounce(() => {
+            const maxIndex = getMaxIndex();
+            if (currentIndex > maxIndex) {
+                currentIndex = maxIndex;
+            }
+            if (!isMobile()) {
+                track.style.transform = '';
+                updateSliderDesktop();
+            }
+        }, 150));
+
+        // Desktop only: touch/swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        track.addEventListener('touchstart', (e) => {
+            if (isMobile()) return; // Let native scroll handle it
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        track.addEventListener('touchend', (e) => {
+            if (isMobile()) return; // Let native scroll handle it
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    goNext();
+                } else {
+                    goPrev();
+                }
+            }
+        }
+    }
+
+    // ═══════════════════════════════════════════════════════════════
     //                    HEADER SCROLL EFFECT
     // ═══════════════════════════════════════════════════════════════
 
@@ -956,6 +1075,7 @@ ${data.package ? `<b>Комплектация:</b> ${escapeHtml(data.package)}` 
         initQuiz();
         initContactForm();
         initReviewsSlider();
+        initCatalogSlider();
         initHeaderScroll();
         initPhoneMasks();
         initLazyLoad();
