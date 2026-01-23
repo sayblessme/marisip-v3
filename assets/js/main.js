@@ -1174,6 +1174,98 @@ ${data.package ? `<b>Комплектация:</b> ${escapeHtml(data.package)}` 
     }
 
     // ═══════════════════════════════════════════════════════════════
+    //                     PORTFOLIO GALLERY
+    // ═══════════════════════════════════════════════════════════════
+
+    function initPortfolioGallery() {
+        const modal = document.getElementById('gallery-modal');
+        if (!modal) return;
+
+        const overlay = modal.querySelector('.gallery-modal__overlay');
+        const closeBtn = modal.querySelector('.gallery-modal__close');
+        const mainImg = document.getElementById('gallery-main-img');
+        const titleEl = document.getElementById('gallery-title');
+        const gridEl = document.getElementById('gallery-grid');
+
+        // Gallery data: title and images for each portfolio item
+        const galleries = {
+            1: {
+                title: '📍 СНТ Виражи',
+                main: 'a-freim-item-11_preview.webp',
+                images: ['a-freim-item-1_preview(1).webp', 'a-freim-item-4_preview(1).webp', 'a-freim-item-2_preview(1).webp', 'a-freim-item-3_preview(1).webp', 'a-freim-item-5_preview(1).webp', 'a-freim-item-6_preview(1).webp', 'a-freim-item-7_preview(1).webp', 'a-freim-item-8_preview(1).webp', 'a-freim-item-9_preview(1).webp', 'a-freim-item-10_preview(1).webp', 'a-freim-item-11_preview.webp']
+            },
+            2: {
+                title: '📍 Объект 2',
+                main: 'portfolio-2.webp',
+                images: ['barnhaus-item-1_preview.webp', 'barnhaus-item-2_preview.webp', 'barnhaus-item-3_preview.webp', 'barnhaus-item-4_preview.webp']
+            },
+            3: {
+                title: '📍 Кокшайск',
+                main: 'barnhaus-item-17_preview.webp',
+                images: ['barnhaus-item-9_preview(1).webp', 'barnhaus-item-2_preview.webp', 'barnhaus-item-3_preview.webp', 'barnhaus-item-5_preview.webp', 'barnhaus-item-6_preview.webp', 'barnhaus-item-1_preview.webp', 'barnhaus-item-4_preview(1).webp', 'barnhaus-item-7_preview.webp', 'barnhaus-item-8_preview.webp', 'barnhaus-item-11_preview.webp', 'barnhaus-item-12_preview.webp', 'barnhaus-item-13_preview.webp', 'barnhaus-item-14_preview.webp', 'barnhaus-item-15_preview.webp', 'barnhaus-item-16_preview.webp', 'barnhaus-item-17_preview.webp']
+            },
+            4: {
+                title: '📍 Чодрасола',
+                main: 'bania-item-4_preview(1).webp',
+                images: ['bania-item-1_preview.webp', 'bania-item-2_preview.webp', 'bania-item-3_preview(1).webp', 'bania-item-4_preview(1).webp', 'bania-item-5_preview(1).webp']
+            },
+            5: {
+                title: '📍 Объект 5',
+                main: 'portfolio-5.webp',
+                images: ['klassika-item-5_preview.webp', 'klassika-item-6_preview.webp', 'klassika-item-7_preview.webp']
+            },
+            6: {
+                title: '📍 Объект 6',
+                main: 'portfolio-6.webp',
+                images: ['barnhaus-item-9_preview.webp', 'barnhaus-item-11_preview.webp', 'barnhaus-item-12_preview.webp', 'barnhaus-item-13_preview.webp']
+            }
+        };
+
+        function openModal(galleryId) {
+            const data = galleries[galleryId];
+            if (!data) return;
+
+            // Set main image
+            mainImg.src = 'assets/img/' + data.main;
+            mainImg.alt = data.title;
+
+            // Set title
+            titleEl.textContent = data.title;
+
+            // Build grid of images
+            gridEl.innerHTML = data.images.map(img =>
+                `<img src="assets/img/${img}" alt="Фото строительства" loading="lazy">`
+            ).join('');
+
+            // Scroll to top
+            modal.querySelector('.gallery-modal__scroll').scrollTop = 0;
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.querySelectorAll('.portfolio__item').forEach(item => {
+            item.addEventListener('click', () => {
+                const galleryId = item.dataset.gallery;
+                if (galleryId) openModal(galleryId);
+            });
+        });
+
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+        if (overlay) overlay.addEventListener('click', closeModal);
+
+        document.addEventListener('keydown', (e) => {
+            if (!modal.classList.contains('active')) return;
+            if (e.key === 'Escape') closeModal();
+        });
+    }
+
+    // ═══════════════════════════════════════════════════════════════
     //                        INITIALIZE
     // ═══════════════════════════════════════════════════════════════
 
@@ -1204,6 +1296,7 @@ ${data.package ? `<b>Комплектация:</b> ${escapeHtml(data.package)}` 
         initHeaderScroll();
         initPhoneMasks();
         initLazyLoad();
+        initPortfolioGallery();
     }
 
     // Run on DOM ready

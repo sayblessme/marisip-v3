@@ -23,7 +23,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="assets/css/style.css?v=20">
+    <link rel="stylesheet" href="assets/css/style.css?v=22">
 </head>
 <body>
     <!-- ═══════════════════════════════════════════════════════════════
@@ -60,7 +60,7 @@
                 <ul class="nav__list">
                     <li><a href="#catalog" class="nav__link">Каталог</a></li>
                     <li><a href="#packages" class="nav__link">Комплектации</a></li>
-                    <li><a href="#mortgage" class="nav__link">Ипотека</a></li>
+                    <li><a href="#portfolio" class="nav__link">Объекты</a></li>
                     <li><a href="#process" class="nav__link">Как работаем</a></li>
                     <li><a href="#reviews" class="nav__link">Отзывы</a></li>
                     <li><a href="#contacts" class="nav__link">Контакты</a></li>
@@ -100,7 +100,7 @@
         <nav class="mobile-menu__nav">
             <a href="#catalog" class="mobile-menu__link">Каталог домов</a>
             <a href="#packages" class="mobile-menu__link">Комплектации</a>
-            <a href="#mortgage" class="mobile-menu__link">Ипотека</a>
+            <a href="#portfolio" class="mobile-menu__link">Объекты</a>
             <a href="#process" class="mobile-menu__link">Как работаем</a>
             <a href="#reviews" class="mobile-menu__link">Отзывы</a>
             <a href="#about" class="mobile-menu__link">О компании</a>
@@ -1051,34 +1051,76 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════
-                             MORTGAGE SECTION
+                             PORTFOLIO SECTION
     ═══════════════════════════════════════════════════════════════ -->
-    <section class="mortgage" id="mortgage">
+    <section class="portfolio" id="portfolio">
         <div class="container">
-            <div class="mortgage__inner">
-                <div class="mortgage__content">
-                    <h2 class="section-title section-title--left">
-                        Ипотека и <span class="section-title__accent">оплата</span>
-                    </h2>
-                    <p class="mortgage__text">Работаем с ведущими банками России. Поможем подобрать выгодную программу и оформить документы.</p>
+            <h2 class="section-title">
+                Построенные <span class="section-title__accent">объекты</span>
+            </h2>
+            <p class="section-subtitle">Наши реализованные проекты — лучшее подтверждение качества работы</p>
 
-                    <ul class="mortgage__list">
-                        <li class="mortgage__item">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            <span><strong>Материнский капитал</strong> — принимаем</span>
-                        </li>
-                        <li class="mortgage__item">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            <span><strong>Фиксируем цену</strong> в договоре</span>
-                        </li>
-                    </ul>
+            <div class="portfolio__grid">
+                <div class="portfolio__item" data-gallery="1">
+                    <img src="assets/img/portfolio-1.webp" alt="Построенный дом 1" loading="lazy">
+                    <div class="portfolio__overlay">
+                        <span class="portfolio__zoom">Смотреть фото</span>
+                    </div>
                 </div>
-                <div class="mortgage__image">
-                    <img src="assets/img/mortgage-house.webp" alt="Ипотека на SIP-дом" loading="lazy">
+                <div class="portfolio__item" data-gallery="4">
+                    <img src="assets/img/portfolio-4.webp" alt="Построенный дом 4" loading="lazy">
+                    <div class="portfolio__overlay">
+                        <span class="portfolio__zoom">Смотреть фото</span>
+                    </div>
+                </div>
+                <div class="portfolio__item" data-gallery="3">
+                    <img src="assets/img/portfolio-3.webp" alt="Построенный дом 3" loading="lazy">
+                    <div class="portfolio__overlay">
+                        <span class="portfolio__zoom">Смотреть фото</span>
+                    </div>
+                </div>
+                <div class="portfolio__item" data-gallery="2">
+                    <img src="assets/img/portfolio-2.webp" alt="Построенный дом 2" loading="lazy">
+                    <div class="portfolio__overlay">
+                        <span class="portfolio__zoom">Смотреть фото</span>
+                    </div>
+                </div>
+                <div class="portfolio__item" data-gallery="5">
+                    <img src="assets/img/portfolio-5.webp" alt="Построенный дом 5" loading="lazy">
+                    <div class="portfolio__overlay">
+                        <span class="portfolio__zoom">Смотреть фото</span>
+                    </div>
+                </div>
+                <div class="portfolio__item" data-gallery="6">
+                    <img src="assets/img/portfolio-6.webp" alt="Построенный дом 6" loading="lazy">
+                    <div class="portfolio__overlay">
+                        <span class="portfolio__zoom">Смотреть фото</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Portfolio Gallery Modal -->
+    <div class="gallery-modal" id="gallery-modal">
+        <div class="gallery-modal__overlay"></div>
+        <div class="gallery-modal__container">
+            <button class="gallery-modal__close" aria-label="Закрыть">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+            </button>
+            <div class="gallery-modal__scroll">
+                <div class="gallery-modal__main">
+                    <img class="gallery-modal__main-img" id="gallery-main-img" src="" alt="Фото объекта">
+                </div>
+                <h3 class="gallery-modal__title" id="gallery-title">📍 СНТ Виражи</h3>
+                <div class="gallery-modal__grid" id="gallery-grid">
+                    <!-- Images will be inserted by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- ═══════════════════════════════════════════════════════════════
                               PROCESS SECTION
@@ -1381,7 +1423,7 @@
                 <nav class="footer__nav">
                     <a href="#catalog">Каталог</a>
                     <a href="#packages">Комплектации</a>
-                    <a href="#mortgage">Ипотека</a>
+                    <a href="#portfolio">Объекты</a>
                     <a href="#process">Как работаем</a>
                     <a href="#reviews">Отзывы</a>
                     <a href="#contacts">Контакты</a>
@@ -1525,6 +1567,6 @@
     </div>
 
     <!-- Scripts -->
-    <script src="assets/js/main.js?v=5"></script>
+    <script src="assets/js/main.js?v=13"></script>
 </body>
 </html>
