@@ -23,7 +23,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="assets/css/style.css?v=11">
+    <link rel="stylesheet" href="assets/css/style.css?v=20">
 </head>
 <body>
     <!-- ═══════════════════════════════════════════════════════════════
@@ -1156,8 +1156,9 @@
             </h2>
 
             <!-- Reviews Slider -->
-            <div class="reviews__slider" id="reviews-slider">
-                <div class="reviews__track">
+            <div id="reviews-slider">
+                <div class="reviews__slider">
+                    <div class="reviews__track">
                     <div class="review-card">
                         <div class="review-card__header">
                             <div class="review-card__avatar">АИ</div>
@@ -1242,6 +1243,7 @@
                         <p class="review-card__text">MINI идеально подошёл для нашей дачи. Компактный, но очень уютный. Строили по сельской ипотеке под 3%.</p>
                     </div>
                 </div>
+                </div>
 
                 <div class="reviews__nav">
                     <button class="reviews__arrow reviews__arrow--prev" aria-label="Предыдущий отзыв">
@@ -1315,38 +1317,46 @@
                         <a href="https://t.me/+79996092666" class="contacts__social" aria-label="Telegram">
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
                         </a>
-                        <a href="#" class="contacts__social" aria-label="Max">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+                        <a href="https://max.ru/" class="contacts__social" aria-label="Max">
+                            <img src="assets/img/max-icon.png" alt="MAX" width="24" height="24">
                         </a>
                     </div>
                 </div>
 
-                <form class="contact-form" id="contact-form">
-                    <h3 class="contact-form__title">Оставить заявку</h3>
+                <div class="contact-form-wrapper" id="contact-form-wrapper">
+                    <form class="contact-form" id="contact-form">
+                        <h3 class="contact-form__title">Оставить заявку</h3>
 
-                    <div class="contact-form__group">
-                        <input type="text" name="name" class="contact-form__input" placeholder="Ваше имя">
+                        <div class="contact-form__group">
+                            <input type="text" name="name" class="contact-form__input" placeholder="Ваше имя">
+                        </div>
+
+                        <div class="contact-form__group">
+                            <input type="tel" name="phone" class="contact-form__input" placeholder="Телефон *" required>
+                        </div>
+
+                        <div class="contact-form__group">
+                            <textarea name="comment" class="contact-form__textarea" placeholder="Комментарий" rows="3"></textarea>
+                        </div>
+
+                        <!-- Honeypot -->
+                        <input type="text" name="company" class="contact-form__honeypot" tabindex="-1" autocomplete="off">
+
+                        <button type="submit" class="btn btn--green btn--lg contact-form__btn">
+                            Отправить заявку
+                        </button>
+
+                        <p class="contact-form__privacy">
+                            Нажимая кнопку, вы соглашаетесь с обработкой персональных данных
+                        </p>
+                    </form>
+
+                    <div class="contact-form__success" id="contact-form-success" style="display: none;">
+                        <div class="contact-form__success-icon">✅</div>
+                        <h3 class="contact-form__success-title">Спасибо за заявку!</h3>
+                        <p class="contact-form__success-text">Мы свяжемся с вами в ближайшее время для уточнения деталей.</p>
                     </div>
-
-                    <div class="contact-form__group">
-                        <input type="tel" name="phone" class="contact-form__input" placeholder="Телефон *" required>
-                    </div>
-
-                    <div class="contact-form__group">
-                        <textarea name="comment" class="contact-form__textarea" placeholder="Комментарий" rows="3"></textarea>
-                    </div>
-
-                    <!-- Honeypot -->
-                    <input type="text" name="company" class="contact-form__honeypot" tabindex="-1" autocomplete="off">
-
-                    <button type="submit" class="btn btn--green btn--lg contact-form__btn">
-                        Отправить заявку
-                    </button>
-
-                    <p class="contact-form__privacy">
-                        Нажимая кнопку, вы соглашаетесь с обработкой персональных данных
-                    </p>
-                </form>
+                </div>
             </div>
         </div>
     </section>
@@ -1515,6 +1525,6 @@
     </div>
 
     <!-- Scripts -->
-    <script src="assets/js/main.js?v=3"></script>
+    <script src="assets/js/main.js?v=5"></script>
 </body>
 </html>

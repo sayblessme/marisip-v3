@@ -1305,8 +1305,14 @@ body.menu-open::before {
 }
 
 @media (min-width: 1024px) {
+    .catalog__track {
+        flex-wrap: wrap;
+        transition: none;
+        cursor: default;
+    }
+
     .catalog__track .house-card {
-        width: calc(33.333% - 0.667rem);
+        width: calc(25% - 0.75rem);
     }
 }
 
@@ -1315,6 +1321,12 @@ body.menu-open::before {
     display: flex;
     justify-content: center;
     gap: 1rem;
+}
+
+@media (min-width: 1024px) {
+    .catalog__nav {
+        display: none;
+    }
 }
 
 .catalog__arrow {
@@ -1620,7 +1632,13 @@ body.menu-open::before {
 }
 
 .mortgage__list {
-    margin-bottom: 2rem;
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .mortgage__list {
+        margin-bottom: 2rem;
+    }
 }
 
 .mortgage__item {
@@ -2200,22 +2218,32 @@ body.menu-open::before {
 /* Reviews Slider */
 .reviews__slider {
     position: relative;
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
     margin-bottom: 2rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.reviews__slider::-webkit-scrollbar {
+    display: none;
 }
 
 .reviews__track {
     display: flex;
-    gap: 1.5rem;
-    transition: transform var(--transition-slow);
-    touch-action: pan-y;
-    user-select: none;
-    -webkit-user-select: none;
-    cursor: grab;
+    gap: 1rem;
+    width: max-content;
+    padding-left: 1.5rem;
+    padding-right: 1rem;
 }
 
 .review-card {
-    min-width: 100%;
+    width: calc(85vw - 2rem);
+    min-width: calc(85vw - 2rem);
+    flex-shrink: 0;
+    scroll-snap-align: start;
     background: var(--card);
     padding: 1.5rem;
     border-radius: var(--radius-xl);
@@ -2223,8 +2251,28 @@ body.menu-open::before {
 }
 
 @media (min-width: 640px) {
+    .reviews__slider {
+        overflow: hidden;
+        scroll-snap-type: none;
+    }
+
+    .reviews__track {
+        gap: 1.5rem;
+        transition: transform var(--transition-slow);
+        touch-action: pan-y;
+        user-select: none;
+        -webkit-user-select: none;
+        cursor: grab;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     .review-card {
+        width: auto;
         min-width: calc(50% - 0.75rem);
+        flex-shrink: 1;
+        scroll-snap-align: unset;
     }
 }
 
@@ -2286,6 +2334,7 @@ body.menu-open::before {
     justify-content: center;
     gap: 1rem;
     margin-top: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .reviews__arrow {
@@ -2315,6 +2364,7 @@ body.menu-open::before {
 .reviews__cta {
     display: flex;
     justify-content: center;
+    margin-top: 3rem;
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -2505,6 +2555,31 @@ body.menu-open::before {
     color: var(--text-muted);
     text-align: center;
     margin-top: 1rem;
+}
+
+.contact-form__success {
+    text-align: center;
+    padding: 2rem;
+    background: var(--card);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+}
+
+.contact-form__success-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.contact-form__success-title {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--green);
+    margin-bottom: 1rem;
+}
+
+.contact-form__success-text {
+    color: var(--text-light);
 }
 
 /* ═══════════════════════════════════════════════════════════════

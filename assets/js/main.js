@@ -515,13 +515,7 @@ ${data.package ? `<b>Комплектация:</b> ${escapeHtml(data.package)}` 
         const name = nameInput?.value.trim();
         const phone = phoneInput?.value.trim();
 
-        // Validation
-        if (!name) {
-            alert('Пожалуйста, введите имя');
-            nameInput?.focus();
-            return;
-        }
-
+        // Validation - only phone is required
         if (!isValidPhone(phone)) {
             alert('Пожалуйста, введите корректный номер телефона');
             phoneInput?.focus();
@@ -837,13 +831,7 @@ ${data.package ? `<b>Комплектация:</b> ${escapeHtml(data.package)}` 
             const phone = phoneInput?.value.trim();
             const comment = commentInput?.value.trim();
 
-            // Validation
-            if (!name) {
-                alert('Пожалуйста, введите имя');
-                nameInput?.focus();
-                return;
-            }
-
+            // Validation - only phone is required
             if (!isValidPhone(phone)) {
                 alert('Пожалуйста, введите корректный номер телефона');
                 phoneInput?.focus();
@@ -859,7 +847,14 @@ ${data.package ? `<b>Комплектация:</b> ${escapeHtml(data.package)}` 
                 const message = formatContactMessage({ name, phone, comment }, 'Форма контактов');
                 await sendToTelegram(message);
 
-                alert(`Спасибо, ${name}! Мы свяжемся с вами в ближайшее время.`);
+                // Show success message
+                const successEl = document.getElementById('contact-form-success');
+                if (successEl) {
+                    form.style.display = 'none';
+                    successEl.style.display = 'block';
+                } else {
+                    alert(`Спасибо, ${name}! Мы свяжемся с вами в ближайшее время.`);
+                }
                 form.reset();
 
             } catch (error) {
@@ -867,11 +862,6 @@ ${data.package ? `<b>Комплектация:</b> ${escapeHtml(data.package)}` 
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.textContent = originalText;
-
-                // Anti-spam delay
-                setTimeout(() => {
-                    submitBtn.disabled = false;
-                }, 3000);
             }
         });
     }
@@ -884,6 +874,7 @@ ${data.package ? `<b>Комплектация:</b> ${escapeHtml(data.package)}` 
         const slider = document.getElementById('reviews-slider');
         if (!slider) return;
 
+        const sliderContainer = slider.querySelector('.reviews__slider');
         const track = slider.querySelector('.reviews__track');
         const cards = track?.querySelectorAll('.review-card');
         const prevBtn = slider.querySelector('.reviews__arrow--prev');
@@ -892,7 +883,10 @@ ${data.package ? `<b>Комплектация:</b> ${escapeHtml(data.package)}` 
         if (!track || !cards || cards.length === 0) return;
 
         let currentIndex = 0;
-        let cardsPerView = getCardsPerView();
+
+        function isMobile() {
+            return window.innerWidth < 640;
+        }
 
         function getCardsPerView() {
             if (window.innerWidth >= 1024) return 3;
@@ -901,28 +895,55 @@ ${data.package ? `<b>Комплектация:</b> ${escapeHtml(data.package)}` 
         }
 
         function getMaxIndex() {
-            return Math.max(0, cards.length - cardsPerView);
+            return Math.max(0, cards.length - getCardsPerView());
         }
 
-        function updateSlider() {
+        // Desktop: transform-based slider
+        function updateSliderDesktop() {
+            if (isMobile()) return;
             const cardWidth = cards[0].offsetWidth;
             const gap = 24; // 1.5rem
             const offset = currentIndex * (cardWidth + gap);
             track.style.transform = `translateX(-${offset}px)`;
         }
 
+        // Mobile: native scroll
+        function scrollToCard(index) {
+            if (!isMobile() || !sliderContainer) return;
+
+            const card = cards[0];
+            if (!card) return;
+
+            const cardWidth = card.offsetWidth;
+            const gap = 16; // 1rem
+            const targetScroll = index * (cardWidth + gap);
+
+            sliderContainer.scrollTo({
+                left: targetScroll,
+                behavior: 'smooth'
+            });
+        }
+
         function goNext() {
             const maxIndex = getMaxIndex();
             if (currentIndex < maxIndex) {
                 currentIndex++;
-                updateSlider();
+                if (isMobile()) {
+                    scrollToCard(currentIndex);
+                } else {
+                    updateSliderDesktop();
+                }
             }
         }
 
         function goPrev() {
             if (currentIndex > 0) {
                 currentIndex--;
-                updateSlider();
+                if (isMobile()) {
+                    scrollToCard(currentIndex);
+                } else {
+                    updateSliderDesktop();
+                }
             }
         }
 
@@ -931,23 +952,27 @@ ${data.package ? `<b>Комплектация:</b> ${escapeHtml(data.package)}` 
 
         // Update on resize
         window.addEventListener('resize', debounce(() => {
-            cardsPerView = getCardsPerView();
             const maxIndex = getMaxIndex();
             if (currentIndex > maxIndex) {
                 currentIndex = maxIndex;
             }
-            updateSlider();
+            if (!isMobile()) {
+                track.style.transform = '';
+                updateSliderDesktop();
+            }
         }, 150));
 
-        // Touch/swipe support
+        // Desktop only: touch/swipe support
         let touchStartX = 0;
         let touchEndX = 0;
 
         track.addEventListener('touchstart', (e) => {
+            if (isMobile()) return; // Let native scroll handle it
             touchStartX = e.changedTouches[0].screenX;
         }, { passive: true });
 
         track.addEventListener('touchend', (e) => {
+            if (isMobile()) return; // Let native scroll handle it
             touchEndX = e.changedTouches[0].screenX;
             handleSwipe();
         }, { passive: true });
