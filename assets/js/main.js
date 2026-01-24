@@ -1288,6 +1288,86 @@ ${data.package ? `<b>Комплектация:</b> ${escapeHtml(data.package)}` 
             }
         };
 
+        // Lightbox state
+        let currentImages = [];
+        let currentIndex = 0;
+        let lightbox = null;
+
+        function createLightbox() {
+            if (lightbox) return lightbox;
+
+            lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            lightbox.innerHTML = `
+                <div class="lightbox__overlay"></div>
+                <button class="lightbox__close" aria-label="Закрыть">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12"/>
+                    </svg>
+                </button>
+                <button class="lightbox__arrow lightbox__arrow--prev" aria-label="Предыдущее">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </button>
+                <button class="lightbox__arrow lightbox__arrow--next" aria-label="Следующее">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                </button>
+                <div class="lightbox__content">
+                    <img class="lightbox__img" src="" alt="">
+                </div>
+                <div class="lightbox__counter"></div>
+            `;
+            document.body.appendChild(lightbox);
+
+            const closeLightbox = () => {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = modal.classList.contains('active') ? 'hidden' : '';
+            };
+
+            lightbox.querySelector('.lightbox__overlay').addEventListener('click', closeLightbox);
+            lightbox.querySelector('.lightbox__close').addEventListener('click', closeLightbox);
+            lightbox.querySelector('.lightbox__arrow--prev').addEventListener('click', () => showImage(currentIndex - 1));
+            lightbox.querySelector('.lightbox__arrow--next').addEventListener('click', () => showImage(currentIndex + 1));
+
+            // Swipe support
+            let touchStartX = 0;
+            const content = lightbox.querySelector('.lightbox__content');
+            content.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+            content.addEventListener('touchend', (e) => {
+                const diff = touchStartX - e.changedTouches[0].screenX;
+                if (Math.abs(diff) > 50) {
+                    if (diff > 0) showImage(currentIndex + 1);
+                    else showImage(currentIndex - 1);
+                }
+            }, { passive: true });
+
+            return lightbox;
+        }
+
+        function showImage(index) {
+            if (index < 0) index = currentImages.length - 1;
+            if (index >= currentImages.length) index = 0;
+            currentIndex = index;
+
+            const img = lightbox.querySelector('.lightbox__img');
+            img.src = currentImages[currentIndex];
+            lightbox.querySelector('.lightbox__counter').textContent = `${currentIndex + 1} / ${currentImages.length}`;
+        }
+
+        function openLightbox(images, startIndex = 0) {
+            createLightbox();
+            currentImages = images;
+            currentIndex = startIndex;
+            showImage(currentIndex);
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
         function openModal(galleryId) {
             const data = galleries[galleryId];
             if (!data) return;
@@ -1300,9 +1380,21 @@ ${data.package ? `<b>Комплектация:</b> ${escapeHtml(data.package)}` 
             titleEl.textContent = data.title;
 
             // Build grid of images
-            gridEl.innerHTML = data.images.map(img =>
-                `<img src="assets/img/${img}" alt="Фото строительства" loading="lazy">`
+            gridEl.innerHTML = data.images.map((img, idx) =>
+                `<img src="assets/img/${img}" alt="Фото строительства" loading="lazy" data-index="${idx}">`
             ).join('');
+
+            // Add click handlers to grid images
+            const allImages = data.images.map(img => 'assets/img/' + img);
+            gridEl.querySelectorAll('img').forEach((img, idx) => {
+                img.addEventListener('click', () => openLightbox(allImages, idx));
+            });
+
+            // Add click handler to main image
+            mainImg.onclick = () => {
+                const mainIdx = data.images.indexOf(data.main);
+                openLightbox(allImages, mainIdx >= 0 ? mainIdx : 0);
+            };
 
             // Scroll to top
             modal.querySelector('.gallery-modal__scroll').scrollTop = 0;
@@ -1327,6 +1419,17 @@ ${data.package ? `<b>Комплектация:</b> ${escapeHtml(data.package)}` 
         if (overlay) overlay.addEventListener('click', closeModal);
 
         document.addEventListener('keydown', (e) => {
+            // Lightbox keyboard navigation
+            if (lightbox && lightbox.classList.contains('active')) {
+                if (e.key === 'Escape') {
+                    lightbox.classList.remove('active');
+                    document.body.style.overflow = modal.classList.contains('active') ? 'hidden' : '';
+                }
+                if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+                if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+                return;
+            }
+            // Gallery modal
             if (!modal.classList.contains('active')) return;
             if (e.key === 'Escape') closeModal();
         });

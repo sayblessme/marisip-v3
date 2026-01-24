@@ -1836,6 +1836,140 @@ body.menu-open::before {
     transform: scale(1.02);
 }
 
+.gallery-modal__main-img {
+    cursor: pointer;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+                        LIGHTBOX
+   ═══════════════════════════════════════════════════════════════ */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 20000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox__overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.95);
+}
+
+.lightbox__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background var(--transition-fast);
+    color: var(--white);
+}
+
+.lightbox__close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.lightbox__close svg {
+    width: 24px;
+    height: 24px;
+}
+
+.lightbox__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background var(--transition-fast);
+    color: var(--white);
+}
+
+.lightbox__arrow:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.lightbox__arrow--prev {
+    left: 1rem;
+}
+
+.lightbox__arrow--next {
+    right: 1rem;
+}
+
+.lightbox__arrow svg {
+    width: 28px;
+    height: 28px;
+}
+
+.lightbox__content {
+    position: relative;
+    z-index: 5;
+    max-width: 90vw;
+    max-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox__img {
+    max-width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+}
+
+.lightbox__counter {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    color: var(--white);
+    font-size: 0.9rem;
+    font-weight: 500;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+}
+
+@media (max-width: 640px) {
+    .lightbox__arrow {
+        width: 40px;
+        height: 40px;
+    }
+
+    .lightbox__arrow--prev {
+        left: 0.5rem;
+    }
+
+    .lightbox__arrow--next {
+        right: 0.5rem;
+    }
+}
+
 /* ═══════════════════════════════════════════════════════════════
                         PROCESS SECTION
    ═══════════════════════════════════════════════════════════════ */
