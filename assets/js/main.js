@@ -1387,11 +1387,15 @@ ${data.package ? `<b>Комплектация:</b> ${escapeHtml(data.package)}` 
             // Add click handlers to grid images
             const allImages = data.images.map(img => 'assets/img/' + img);
             gridEl.querySelectorAll('img').forEach((img, idx) => {
-                img.addEventListener('click', () => openLightbox(allImages, idx));
+                img.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    openLightbox(allImages, idx);
+                });
             });
 
             // Add click handler to main image
-            mainImg.onclick = () => {
+            mainImg.onclick = (e) => {
+                e.stopPropagation();
                 const mainIdx = data.images.indexOf(data.main);
                 openLightbox(allImages, mainIdx >= 0 ? mainIdx : 0);
             };
