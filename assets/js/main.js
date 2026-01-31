@@ -12,7 +12,7 @@
 
     // Obfuscated credentials (base64)
     const _t = 'ODM1OTYzMzA5MjpBQUVSREdIbklCSUlmQS16b2dnNTcxSDZzMWdYVWtqYTRqQQ==';
-    const _c = 'LTUwNzQ3OTI3NTM=';
+    const _c = 'LTQ5OTI0NTE2Mjk=';
     const _d = (s) => atob(s);
     const TG_BOT_TOKEN = _d(_t);
     const TG_CHAT_ID = _d(_c);
@@ -149,9 +149,7 @@
 <b>Связь:</b> ${escapeHtml(data.contactMethod || 'Звонок')}
 <b>Регион:</b> ${escapeHtml(data.region || 'Не указан')}
 
-${gift}
-
-📎 <i>Каталог: assets/pdf/catalog.pdf</i>`;
+${gift}`;
     }
 
     /**
@@ -1472,6 +1470,69 @@ ${data.package ? `<b>Комплектация:</b> ${escapeHtml(data.package)}` 
         initLazyLoad();
         initPortfolioSlider();
         initPortfolioGallery();
+        initAdvantageCards();
+    }
+
+    // ═══════════════════════════════════════════════════════════════
+    //                    ADVANTAGE CARDS
+    // ═══════════════════════════════════════════════════════════════
+    function initAdvantageCards() {
+        const cards = document.querySelectorAll('.advantage-card[data-expandable]');
+        let popup = null;
+
+        function createPopup() {
+            if (popup) return popup;
+
+            popup = document.createElement('div');
+            popup.className = 'advantage-popup';
+            popup.innerHTML = `
+                <div class="advantage-popup__overlay"></div>
+                <div class="advantage-popup__content">
+                    <button class="advantage-popup__close" aria-label="Закрыть">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 6L6 18M6 6l12 12"/>
+                        </svg>
+                    </button>
+                    <div class="advantage-popup__icon"></div>
+                    <h3 class="advantage-popup__title"></h3>
+                    <p class="advantage-popup__text"></p>
+                </div>
+            `;
+            document.body.appendChild(popup);
+
+            const closePopup = () => {
+                popup.classList.remove('active');
+            };
+
+            popup.querySelector('.advantage-popup__overlay').addEventListener('click', closePopup);
+            popup.querySelector('.advantage-popup__close').addEventListener('click', closePopup);
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && popup.classList.contains('active')) {
+                    closePopup();
+                }
+            });
+
+            return popup;
+        }
+
+        function openPopup(card) {
+            createPopup();
+
+            const icon = card.querySelector('.advantage-card__icon').innerHTML;
+            const title = card.querySelector('.advantage-card__title').textContent;
+            const text = card.querySelector('.advantage-card__text').textContent;
+
+            popup.querySelector('.advantage-popup__icon').innerHTML = icon;
+            popup.querySelector('.advantage-popup__title').textContent = title;
+            popup.querySelector('.advantage-popup__text').textContent = text;
+
+            popup.classList.add('active');
+        }
+
+        cards.forEach(card => {
+            card.addEventListener('click', () => openPopup(card));
+        });
     }
 
     // Run on DOM ready
